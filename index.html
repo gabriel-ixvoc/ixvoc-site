@@ -848,7 +848,7 @@ section{scroll-margin-top:84px;}
     <p class="hsub"><strong>Seu próximo cliente precisa entender por que escolher você.</strong><br>Sites claros, anúncios conectados e um caminho simples até o contato.</p>
 
     <div class="hacts">
-      <a href="#cta" class="btn-p">
+      <a href="https://wa.me/5511993223865?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20projeto%20para%20minha%20empresa." class="btn-p" target="_blank" rel="noopener noreferrer">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         Conversar sobre meu projeto
       </a>
@@ -1658,7 +1658,7 @@ function paintPain(i){
     <div class="pp-who">${p.who}</div>
     <div class="pp-block why"><h4>⚠ Por que isso acontece</h4><p>${p.why}</p></div>
     <div class="pp-block fix"><h4>✓ Como a IXVOC resolve</h4><p>${p.fix}</p></div>
-    <div class="pp-tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div><a class="pain-contact" href="#cta">Conversar sobre este problema <span aria-hidden="true">→</span></a>`;
+    <div class="pp-tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div><a class="pain-contact" href="https://wa.me/5511993223865?text=${encodeURIComponent('Olá! Quero conversar sobre este desafio: '+p.short)}" target="_blank" rel="noopener noreferrer">Conversar sobre este problema <span aria-hidden="true">→</span></a>`;
 }
 const painPanel = document.getElementById('painPanel');
 const painLayout = painPanel.parentElement;
