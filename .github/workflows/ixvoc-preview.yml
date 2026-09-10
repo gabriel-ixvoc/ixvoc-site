@@ -48,7 +48,7 @@ jobs:
               }).map(el=>({tag:el.tagName,class:el.className,id:el.id,width:el.clientWidth,scroll:el.scrollWidth})));
               assert.deepEqual(bad,[],label+' overflow');
             }
-            async function shot(name){await page.screenshot({path:'qa-results/'+name+'.jpg',type:'jpeg',quality:70});}
+            async function shot(name){const image=await page.screenshot({path:'qa-results/'+name+'.jpg',type:'jpeg',quality:60});if(['hero-1440','hero-390','pains-1440','services-1440','modal-390','contact-390'].includes(name))console.log('QA_IMAGE '+name+' '+image.toString('base64'));}
             for(const width of [1440,1024,768,390,320]){
               await page.setViewportSize({width,height:900});
               await page.goto(base);
