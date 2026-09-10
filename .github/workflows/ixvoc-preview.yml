@@ -1,0 +1,135 @@
+name: IXVOC visual and interaction checks
+on:
+  push:
+    branches: [codex/ixvoc-clarity-conversion]
+    paths: [index.html, .github/workflows/ixvoc-preview.yml]
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install browser
+        run: |
+          npm install --no-save --package-lock=false playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Verify layout and interactions
+        run: |
+          node <<'NODE'
+          const { chromium } = require('playwright');
+          const fs = require('fs');
+          const http = require('http');
+          const assert = require('assert/strict');
+          const {execFileSync}=require('child_process');
+          (async()=>{
+            fs.mkdirSync('qa-results',{recursive:true});
+            const html=fs.readFileSync('index.html','utf8');
+            const original=execFileSync('git',['show','origin/main:index.html'],{encoding:'utf8'});
+            assert.equal(html.match(/<h1 class="hwm"[\s\S]*?<\/h1>/)[0],original.match(/<h1 class="hwm"[\s\S]*?<\/h1>/)[0]);
+            const server=http.createServer((req,res)=>{res.setHeader('Content-Type','text/html; charset=utf-8');res.end(html)}).listen(4173,'127.0.0.1');
+            const browser=await chromium.launch();
+            const errors=[];
+            const report=[];
+            const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});
+            page.on('pageerror',e=>errors.push(e.message));
+            const base='http://127.0.0.1:4173';
+            async function overflow(label){
+              const bad=await page.evaluate(()=>[...document.querySelectorAll('main section,nav,footer,.head-c,.btn-p,.btn-g,.pain-item,.svc-card,.modal-panel,.faq-q,.ps-body')].filter(el=>{
+                const r=el.getBoundingClientRect(),s=getComputedStyle(el);
+                if(!r.width||s.visibility==='hidden'||el.closest('[inert]'))return false;
+                return r.left < -1 || r.right > innerWidth+1 || el.scrollWidth > el.clientWidth+2;
+              }).map(el=>({tag:el.tagName,class:el.className,id:el.id,width:el.clientWidth,scroll:el.scrollWidth})));
+              assert.deepEqual(bad,[],label+' overflow');
+            }
+            async function shot(name){await page.screenshot({path:'qa-results/'+name+'.jpg',type:'jpeg',quality:70});}
+            for(const width of [1440,1024,768,390,320]){
+              await page.setViewportSize({width,height:900});
+              await page.goto(base);
+              await page.waitForTimeout(2200);
+              await overflow('viewport '+width);
+              if(width===1440||width===390)await shot('hero-'+width);
+              const font=await page.locator('.stitle').first().evaluate(el=>getComputedStyle(el).fontFamily);
+              assert(font.includes('DM Sans'),'Headings must use readable font');
+              const heroFont=await page.locator('.hwm').evaluate(el=>getComputedStyle(el).fontFamily);
+              assert(heroFont.includes('Syne'),'Hero must retain brand font');
+              await page.locator('#pains').scrollIntoViewIfNeeded();
+              await page.locator('.pain-item').nth(6).click();
+              await page.waitForTimeout(650);
+              assert.match(await page.locator('#ppInner').innerText(),/Lentidão/);
+              if(width<=960)assert(await page.locator('#painPanel').evaluate(el=>el.previousElementSibling.dataset.p==='6'));
+              await overflow('pain '+width);
+              if(width===1440||width===390)await shot('pains-'+width);
+              await page.locator('#services').scrollIntoViewIfNeeded();
+              await page.waitForTimeout(900);
+              await overflow('services '+width);
+              if(width===1440||width===390)await shot('services-'+width);
+              await page.locator('.svc-card').first().click();
+              await page.waitForTimeout(650);
+              assert.equal(await page.locator('#svcModal').evaluate(el=>el.inert),false);
+              assert.match(await page.locator('#mName').innerText(),/Sites/);
+              assert.match(await page.locator('#mCTA').getAttribute('href'),/^https:\/\/wa.me\/5511993223865/);
+              await overflow('modal '+width);
+              if(width===390)await shot('modal-390');
+              await page.keyboard.press('Escape');
+              assert.equal(await page.locator('#svcModal').evaluate(el=>el.inert),true);
+              await page.locator('#metrics').scrollIntoViewIfNeeded();
+              await page.waitForTimeout(2400);
+              assert.deepEqual(await page.locator('.met-num').allTextContents(),['5','8','100%','0']);
+              await page.locator('.proc-step').last().scrollIntoViewIfNeeded();
+              await page.waitForTimeout(600);
+              assert((await page.locator('#procFill').evaluate(el=>parseFloat(el.style.height)))>0);
+              assert(await page.locator('.proc-step').last().evaluate(el=>el.classList.contains('active')));
+              await page.locator('#diag').scrollIntoViewIfNeeded();
+              assert(await page.locator('#qNext').isDisabled());
+              for(let i=0;i<8;i++){
+                await page.locator('.q-opt').first().click();
+                await page.locator('#qNext').click();
+                await page.waitForTimeout(400);
+              }
+              await page.waitForTimeout(500);
+              assert(await page.locator('#diagResult').isVisible());
+              const diagLink=await page.locator('#diagContact').getAttribute('href');
+              assert(decodeURIComponent(diagLink).includes('Sua empresa tem site?'));
+              await overflow('diagnostic '+width);
+              if(width===390)await shot('diagnostic-390');
+              await page.locator('#diagRestart').click();
+              assert(await page.locator('#diagQuiz').isVisible());
+              assert(await page.locator('#qNext').isDisabled());
+              await page.locator('.faq-q').first().click();
+              assert.equal(await page.locator('.faq-q').first().getAttribute('aria-expanded'),'true');
+              await page.locator('.faq-q').nth(1).click();
+              assert.equal(await page.locator('.faq-q').first().getAttribute('aria-expanded'),'false');
+              await page.locator('#cta').scrollIntoViewIfNeeded();
+              await page.waitForTimeout(700);
+              await overflow('contact '+width);
+              if(width===1440||width===390)await shot('contact-'+width);
+              assert.match(await page.locator('#contactCTA').getAttribute('href'),/^https:\/\/wa.me\/5511993223865/);
+              if(width<=960){
+                await page.locator('#burger').click();
+                assert.equal(await page.locator('#burger').getAttribute('aria-expanded'),'true');
+                await page.locator('#mobmenu a[href="#services"]').click();
+                assert.equal(await page.locator('#burger').getAttribute('aria-expanded'),'false');
+              }
+              report.push({width,checks:'layout, fonts, pain selection, modal, counters, timeline, diagnostic, FAQ, WhatsApp, mobile menu passed'});
+            }
+            await page.emulateMedia({reducedMotion:'reduce'});
+            await page.goto(base);
+            assert.equal(await page.locator('.hwm .ltr').first().evaluate(el=>getComputedStyle(el).opacity),'1');
+            assert.deepEqual(errors,[]);
+            fs.writeFileSync('qa-results/report.json',JSON.stringify({passed:true,report,errors},null,2));
+            console.log(JSON.stringify({passed:true,report,errors},null,2));
+            await browser.close();server.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ixvoc-browser-preview
+          path: qa-results/
