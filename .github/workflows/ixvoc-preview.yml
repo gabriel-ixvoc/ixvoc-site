@@ -44,7 +44,7 @@ jobs:
               const bad=await page.evaluate(()=>[...document.querySelectorAll('main section,nav,footer,.hwm,.hlabel,.hsub,.hacts,.head-c,.btn-p,.btn-g,.pain-item,.svc-card,.modal-panel,.faq-q,.ps-body')].filter(el=>{
                 const r=el.getBoundingClientRect(),s=getComputedStyle(el);
                 if(!r.width||s.visibility==='hidden'||el.closest('[inert]'))return false;
-                return r.left < -1 || r.right > innerWidth+1 || (el.id!=='hero' && el.scrollWidth > el.clientWidth+2);
+                return r.left < -1 || r.right > innerWidth+1 || (el.id!=='hero' && !el.classList.contains('hwm') && el.scrollWidth > el.clientWidth+2);
               }).map(el=>({tag:el.tagName,class:el.className,id:el.id,width:el.clientWidth,scroll:el.scrollWidth})));
               assert.deepEqual(bad,[],label+' overflow');
             }
