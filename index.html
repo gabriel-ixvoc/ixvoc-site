@@ -796,6 +796,81 @@ section{scroll-margin-top:84px;}
 #cta::before{width:min(900px,100%);}
 .btn-p::after{display:none;}
 .btn-p,.btn-g{max-width:100%;}
+
+/* Interactive problem/solution cards, with a stable size on every side. */
+#problem .flip-wrap{perspective:1400px;}
+#problem .flip-card{
+  display:block;position:relative;height:360px;width:100%;border:0;background:none;
+  overflow:visible;border-radius:8px;transform-style:preserve-3d;
+  transform:rotateY(0deg)!important;transition:transform .7s var(--ease);cursor:pointer;
+}
+#problem .flip-card.flipped{transform:rotateY(180deg)!important;}
+#problem .flip-card:focus-visible{outline:3px solid var(--neon);outline-offset:6px;}
+#problem .flip-front,#problem .flip-back{
+  position:absolute;inset:0;display:flex;flex-direction:column;height:100%;margin:0;
+  padding:28px;border:1px solid var(--border2);border-radius:8px;overflow:hidden;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;text-align:left;align-items:flex-start;
+}
+#problem .flip-front{transform:rotateY(0deg);background:linear-gradient(150deg,#22262B,#131619);justify-content:flex-end;}
+#problem .flip-back{transform:rotateY(180deg);background:linear-gradient(145deg,#123438,#101B20);border-color:rgba(0,200,255,.4);justify-content:center;}
+#problem .flip-front::before,#problem .flip-back::before{display:block;content:'';position:absolute;top:0;left:24px;right:24px;height:2px;}
+#problem .flip-front::before{background:linear-gradient(90deg,var(--red),transparent);}
+#problem .flip-back::before{background:linear-gradient(90deg,var(--neon),var(--neon2));}
+#problem .flip-icon{display:block;font-size:2rem;line-height:1.2;margin-bottom:auto;}
+#problem .flip-hint{display:block;position:absolute;top:22px;right:24px;margin:0;font-size:1.375rem;line-height:1;color:var(--muted);letter-spacing:0;}
+#problem .flip-title{font-size:1.25rem;line-height:1.3;}
+#problem .flip-desc{font-size:1rem;line-height:1.6;}
+#problem .flip-tag{font-size:.75rem;}
+/* The metrics share their rhythm, with separate accent colors. */
+#metrics .met-grid{gap:16px;}
+#metrics .met-card{
+  --metric-accent:#00C8FF;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:216px;padding:32px 18px;background:linear-gradient(155deg,#22292D,#111618);
+  border:1px solid var(--border2);border-radius:8px;box-shadow:0 12px 32px rgba(0,0,0,.18);
+}
+#metrics .met-card:nth-child(2){--metric-accent:#F5F7F8;}
+#metrics .met-card:nth-child(3){--metric-accent:#5CE0C4;}
+#metrics .met-card:nth-child(4){--metric-accent:#FF8190;}
+#metrics .met-card::before{content:'';position:absolute;left:24px;right:24px;top:0;height:2px;background:var(--metric-accent);}
+#metrics .met-card:hover{border-color:var(--metric-accent);transform:translateY(-4px);}
+#metrics .met-num{
+  font-family:var(--fb);font-size:3.75rem;font-weight:700;line-height:1.1;min-height:1.1em;
+  color:var(--metric-accent);-webkit-text-fill-color:currentColor;background:none;
+  text-shadow:0 0 26px color-mix(in srgb,var(--metric-accent) 15%,transparent);font-variant-numeric:tabular-nums;
+}
+#metrics .met-label{font-size:1rem;color:var(--soft);margin-top:16px;line-height:1.45;text-transform:none;letter-spacing:0;}
+#about .founder-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:center;}
+#about .founder-role{font-size:1rem;font-weight:600;color:var(--neon);margin:0 0 24px;}
+#about .at p{max-width:48ch;}
+.founder-credentials{margin:28px 0 18px;border-top:1px solid var(--border2);}
+.founder-credentials>div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;padding:17px 0;border-bottom:1px solid var(--border);}
+.founder-credentials dt{font-size:.875rem;font-weight:700;color:var(--neon);}
+.founder-credentials dd{font-size:1rem;line-height:1.55;color:var(--white);}
+.founder-photo{margin:0;max-width:460px;width:100%;justify-self:end;}
+.founder-photo img{display:block;width:100%;height:auto;aspect-ratio:892/882;object-fit:cover;border-radius:8px;}
+.founder-photo figcaption{margin-top:14px;font-size:.875rem;color:var(--muted);text-align:left;}
+.founder-contact{display:inline-flex;align-items:center;gap:18px;min-height:48px;color:var(--neon);text-decoration:none;font-weight:600;}
+@media(max-width:960px){
+ #about .founder-grid{grid-template-columns:1fr;gap:32px;}
+ #about .at,#about .at p,#about .at .stitle{text-align:left;margin-left:0;}
+ #about .at .stag{justify-content:flex-start;}
+ .founder-photo{justify-self:start;max-width:520px;}
+ #metrics .met-card{min-height:200px;}
+}
+@media(max-width:680px){
+ #problem .flip-front,#problem .flip-back{padding:24px;}
+ #metrics .met-grid{gap:12px;}
+ #metrics .met-card{min-height:176px;padding:24px 12px;}
+ #metrics .met-num{font-size:2.5rem;}
+ #metrics .met-label{font-size:.875rem;}
+ .founder-credentials>div{grid-template-columns:60px minmax(0,1fr);gap:12px;}
+}
+@media(max-width:360px){
+ #metrics .met-num{font-size:2rem;}
+ #metrics .met-label{font-size:.8125rem;}
+}
+
 </style>
 </head>
 <body>
@@ -909,15 +984,15 @@ section{scroll-margin-top:84px;}
     <div class="flip-grid">
 
       <div class="flip-wrap reveal">
-        <div class="flip-card">
+        <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-labelledby="flip-problem-1">
           <div class="flip-front">
             <span class="flip-icon">🎨</span>
-            <span class="flip-hint">passe o mouse →</span>
+            <span class="flip-hint" aria-hidden="true">↻</span>
             <span class="flip-tag flip-tag-prob">⚠ Problema</span>
-            <h3 class="flip-title">Site bonito que não converte</h3>
+            <h3 class="flip-title" id="flip-problem-1">Site bonito que não converte</h3>
             <p class="flip-desc">Bonito, mas confuso. Se o cliente não entende rápido, ele sai.</p>
           </div>
-          <div class="flip-back">
+          <div class="flip-back" aria-hidden="true">
             <span class="flip-tag flip-tag-sol">✓ Nossa solução</span>
             <h3 class="flip-title">Oferta clara. Contato fácil.</h3>
             <p class="flip-desc">Organizamos a página para explicar, criar confiança e gerar ação.</p>
@@ -926,15 +1001,15 @@ section{scroll-margin-top:84px;}
       </div>
 
       <div class="flip-wrap reveal" style="transition-delay:.1s">
-        <div class="flip-card">
+        <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-labelledby="flip-problem-2">
           <div class="flip-front">
             <span class="flip-icon">💸</span>
-            <span class="flip-hint">passe o mouse →</span>
+            <span class="flip-hint" aria-hidden="true">↻</span>
             <span class="flip-tag flip-tag-prob">⚠ Problema</span>
-            <h3 class="flip-title">Tráfego pago sem retorno</h3>
+            <h3 class="flip-title" id="flip-problem-2">Tráfego pago sem retorno</h3>
             <p class="flip-desc">Anúncio bom em página fraca vira custo, não crescimento.</p>
           </div>
-          <div class="flip-back">
+          <div class="flip-back" aria-hidden="true">
             <span class="flip-tag flip-tag-sol">✓ Nossa solução</span>
             <h3 class="flip-title">Campanha e página conectadas</h3>
             <p class="flip-desc">Ligamos campanha, página e conversão para medir o que vende.</p>
@@ -943,15 +1018,15 @@ section{scroll-margin-top:84px;}
       </div>
 
       <div class="flip-wrap reveal" style="transition-delay:.2s">
-        <div class="flip-card">
+        <div class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-labelledby="flip-problem-3">
           <div class="flip-front">
             <span class="flip-icon">👻</span>
-            <span class="flip-hint">passe o mouse →</span>
+            <span class="flip-hint" aria-hidden="true">↻</span>
             <span class="flip-tag flip-tag-prob">⚠ Problema</span>
-            <h3 class="flip-title">Marca digital invisível</h3>
+            <h3 class="flip-title" id="flip-problem-3">Marca digital invisível</h3>
             <p class="flip-desc">Quem aparece primeiro e passa confiança ganha antes da conversa.</p>
           </div>
-          <div class="flip-back">
+          <div class="flip-back" aria-hidden="true">
             <span class="flip-tag flip-tag-sol">✓ Nossa solução</span>
             <h3 class="flip-title">Uma marca fácil de escolher</h3>
             <p class="flip-desc">Ajustamos presença, marca e SEO para você ser encontrado e levado a sério.</p>
@@ -1187,27 +1262,23 @@ section{scroll-margin-top:84px;}
 <!-- ═══ ABOUT ═══ -->
 <section id="about">
   <div class="container">
-    <div class="about-grid">
+    <div class="about-grid founder-grid">
       <div class="at reveal">
-        <span class="stag">Sobre a IXVOC</span>
-        <h2 class="stitle">Estratégia com nome <br>e responsabilidade.</h2>
-        <p>A IXVOC une estratégia, design e desenvolvimento para apresentar o valor do seu negócio com clareza.</p>
-        <p>Você conversa sobre o seu negócio. Nós transformamos essa conversa em uma presença digital feita para gerar oportunidades.</p>
-        <div class="about-quote">
-          <p>"O cliente precisa entender seu valor antes de perguntar seu preço."</p>
-          <cite>— Gabriel Sarzi, Fundador · IXVOC</cite>
-        </div>
+        <span class="stag">Quem sou eu</span>
+        <h2 class="stitle">Gabriel Sarzi.</h2>
+        <p class="founder-role">Fundador da IXVOC</p>
+        <p>Uno o olhar analítico da engenharia à estratégia de marca e crescimento.</p>
+        <p>Na IXVOC, esse encontro vira um objetivo claro: mostrar o valor do seu negócio e facilitar a decisão do seu cliente.</p>
+        <dl class="founder-credentials">
+          <div><dt>USP</dt><dd>Engenharia de Materiais</dd></div>
+          <div><dt>PUCRS</dt><dd>MBA em Marketing, Branding e Growth</dd></div>
+        </dl>
+        <a class="founder-contact" href="https://wa.me/5511993223865?text=Ol%C3%A1%2C%20Gabriel!%20Quero%20conversar%20sobre%20um%20projeto%20com%20a%20IXVOC." target="_blank" rel="noopener noreferrer">Vamos conversar <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="about-vis reveal">
-        <div class="aoring">
-          <span class="odot"></span>
-          <span class="odot"></span>
-          <div class="aoring-inner">
-            IXVOC
-            <small>Est. 2024</small>
-          </div>
-        </div>
-      </div>
+      <figure class="founder-photo reveal">
+        <img src="assets/gabriel-sarzi.jpeg" alt="Gabriel Sarzi, fundador da IXVOC" width="892" height="882" loading="lazy" decoding="async">
+        <figcaption>Engenharia, marca e crescimento.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -2018,6 +2089,36 @@ addEventListener('resize',()=>{
     document.body.classList.remove('menu-open');document.body.style.overflow='';syncMenu();
   }
 });
+
+/* Keep pointer, touch and keyboard activation in the same state. */
+document.querySelectorAll('#problem .flip-card').forEach(card=>{
+  const front=card.querySelector('.flip-front'),back=card.querySelector('.flip-back');
+  const problemTitle=front.querySelector('h3'),solutionTitle=back.querySelector('h3');
+  solutionTitle.id=problemTitle.id.replace('problem','solution');
+  let hoverActive=false;
+  const flip=on=>{
+    card.classList.toggle('flipped',on);
+    card.setAttribute('aria-pressed',String(on));
+    card.setAttribute('aria-labelledby',on?solutionTitle.id:problemTitle.id);
+    front.setAttribute('aria-hidden',String(on));
+    back.setAttribute('aria-hidden',String(!on));
+  };
+  card.parentElement.addEventListener('pointerenter',e=>{
+    if(e.pointerType==='mouse'&&matchMedia('(hover:hover)').matches()){hoverActive=true;flip(true);}
+  });
+  card.parentElement.addEventListener('pointerleave',e=>{
+    if(e.pointerType==='mouse'){hoverActive=false;flip(false);}
+  });
+  card.addEventListener('click',e=>{
+    if(e.detail>0&&hoverActive)return;
+    flip(!card.classList.contains('flipped'));
+  });
+  card.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();flip(!card.classList.contains('flipped'));}
+    else if(e.key==='Escape'){flip(false);}
+  });
+});
+
 </script>
 </body>
 </html>
