@@ -1053,31 +1053,50 @@ section{scroll-margin-top:84px;}
 .pm-close{background:none;border:none;padding:6px;color:var(--muted);cursor:pointer;line-height:0;border-radius:4px;flex-shrink:0;}
 .pm-close:hover{color:var(--white);}
 .pm-body{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;padding:28px;}
-.pm-device-wrap{position:relative;display:flex;flex-direction:column;transition:width .3s;}
-.pm-device-wrap.is-phone{width:340px;background:#111417;border-radius:48px;border:8px solid #22292D;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 32px 64px rgba(0,0,0,.6);}
-.pm-device-wrap.is-phone .pm-phone-deco{display:flex;justify-content:center;padding:10px 0 6px;flex-shrink:0;}
-.pm-device-wrap.is-phone .pm-phone-notch{width:90px;height:26px;background:#0a0c0e;border-radius:0 0 18px 18px;}
+.pm-device-wrap{position:relative;display:flex;flex-direction:column;}
+
+/* ── PHONE: iPhone 12 Pro Max (428×926) — altura calculada para caber no modal ── */
+.pm-device-wrap.is-phone{
+  /* --ph = altura da tela: cabe no modal com margem para header + notch + home bar */
+  --ph:clamp(340px,calc(92vh - 170px),540px);
+  /* largura pela razão 428/926 = 0.4622 + 16px de borda */
+  width:calc(var(--ph) * 0.4622 + 16px);
+  background:#111417;
+  border-radius:40px;
+  border:8px solid #1e2428;
+  box-shadow:0 0 0 1px rgba(255,255,255,.06),0 20px 50px rgba(0,0,0,.65);
+  overflow:hidden;
+}
+.pm-device-wrap.is-phone .pm-phone-deco{display:flex;justify-content:center;padding:8px 0 5px;flex-shrink:0;}
+.pm-device-wrap.is-phone .pm-phone-notch{width:60px;height:20px;background:#0a0c0e;border-radius:0 0 12px 12px;}
 .pm-device-wrap.is-phone .pm-desktop-deco{display:none;}
-/* Phone: iPhone 12 Pro Max ratio (428×926) — scale to 340px wide → ~735px tall shell */
-.pm-device-wrap.is-phone .pm-screen{flex:1;border-radius:0;overflow:hidden;height:668px;}
+.pm-device-wrap.is-phone .pm-screen{height:var(--ph);overflow:hidden;flex:none;position:relative;}
 .pm-device-wrap.is-phone .pm-screen iframe{width:100%;height:100%;border:none;}
-.pm-device-wrap.is-phone .pm-phone-home{display:flex;justify-content:center;padding:10px 0 14px;flex-shrink:0;}
-.pm-device-wrap.is-phone .pm-phone-bar{width:100px;height:5px;background:rgba(255,255,255,.32);border-radius:3px;}
-.pm-device-wrap.is-phone .pm-desktop-bar{display:none;}
-/* Desktop: MacBook 13" ratio (16:10) */
-.pm-device-wrap.is-desktop{width:min(880px,calc(100vw - 56px));background:#181c1f;border-radius:12px;border:1px solid rgba(255,255,255,.1);box-shadow:0 32px 80px rgba(0,0,0,.6);}
-.pm-device-wrap.is-desktop .pm-desktop-deco{display:flex;align-items:center;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0;}
-.pm-device-wrap.is-desktop .pm-desktop-dots{display:flex;gap:5px;margin-right:12px;}
-.pm-device-wrap.is-desktop .pm-desktop-dots span{width:10px;height:10px;border-radius:50%;}
+.pm-device-wrap.is-phone .pm-phone-home{display:flex;justify-content:center;padding:7px 0 10px;flex-shrink:0;}
+.pm-device-wrap.is-phone .pm-phone-bar{width:60px;height:4px;background:rgba(255,255,255,.22);border-radius:2px;}
+
+/* ── DESKTOP: MacBook 13" (16:10) ── */
+.pm-device-wrap.is-desktop{
+  width:min(860px,calc(100vw - 48px));
+  background:#1a1d20;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 24px 60px rgba(0,0,0,.7);
+  overflow:hidden;
+}
+.pm-device-wrap.is-desktop .pm-desktop-deco{display:flex;align-items:center;height:38px;padding:0 14px;background:#242729;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0;}
+.pm-device-wrap.is-desktop .pm-desktop-dots{display:flex;gap:6px;margin-right:14px;}
+.pm-device-wrap.is-desktop .pm-desktop-dots span{width:11px;height:11px;border-radius:50%;}
 .pm-device-wrap.is-desktop .pm-desktop-dots span:nth-child(1){background:#FF6058;}
 .pm-device-wrap.is-desktop .pm-desktop-dots span:nth-child(2){background:#FFBD2E;}
 .pm-device-wrap.is-desktop .pm-desktop-dots span:nth-child(3){background:#28C840;}
 .pm-device-wrap.is-desktop .pm-desktop-urlbar{flex:1;background:rgba(255,255,255,.07);border-radius:5px;padding:4px 10px;font-size:.72rem;color:var(--muted);font-family:monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .pm-device-wrap.is-desktop .pm-phone-deco{display:none;}
 .pm-device-wrap.is-desktop .pm-phone-home{display:none;}
-/* 16:10 → height = width × 0.625; capped at 550px */
-.pm-device-wrap.is-desktop .pm-screen{height:min(550px,calc((min(880px,100vw - 56px)) * 0.625));border-radius:0 0 12px 12px;overflow:hidden;}
+/* 16:10: height = width × 0.625 */
+.pm-device-wrap.is-desktop .pm-screen{height:min(538px,calc(min(860px,100vw - 48px) * 0.625));overflow:hidden;position:relative;}
 .pm-device-wrap.is-desktop .pm-screen iframe{width:100%;height:100%;border:none;}
+
 .pm-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(9,11,13,.85);border-radius:inherit;transition:opacity .2s;}
 .pm-loading.hidden{opacity:0;pointer-events:none;}
 .pm-loading-spin{width:32px;height:32px;border:3px solid rgba(0,200,255,.2);border-top-color:var(--neon);border-radius:50%;animation:spin .8s linear infinite;}
@@ -1088,10 +1107,8 @@ section{scroll-margin-top:84px;}
 @keyframes spin{to{transform:rotate(360deg);}}
 @media(max-width:680px){
   #cases .cases-grid{grid-template-columns:1fr;}
-  .pm-body{padding:14px;}
-  .pm-device-wrap.is-phone{width:100%;max-width:340px;}
-  .pm-device-wrap.is-desktop{width:100%;}
-  .pm-header{flex-wrap:wrap;gap:8px;}
+  .pm-body{padding:14px 10px;}
+  .pm-device-wrap.is-desktop{width:calc(100vw - 28px);}
 }
 
 /* ── NAV LOGO SIGMA ── */
@@ -1686,10 +1703,7 @@ section{scroll-margin-top:84px;}
   <div class="pm-sheet">
     <div class="pm-header">
       <h3 id="pmTitle"></h3>
-      <div class="pm-toggle">
-        <button class="pm-tog active" id="pmPhone" aria-label="Visualização mobile">📱 Mobile</button>
-        <button class="pm-tog" id="pmDesktop" aria-label="Visualização desktop">🖥 Desktop</button>
-      </div>
+
       <a href="#" id="pmExt" class="pm-ext" target="_blank" rel="noopener noreferrer">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         Abrir site
@@ -2227,8 +2241,7 @@ document.getElementById('casesGrid').innerHTML=CASES.map((c,i)=>`
   <div class="case-card reveal" style="transition-delay:${i*.1}s">
     <div class="case-icon">
       <img src="https://logo.clearbit.com/${c.domain}" alt="${c.name}" loading="lazy"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="case-icon-fb">${c.icon}</span>
+        onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=${c.domain}&sz=128'">
     </div>
     <p class="case-quote">${c.quote}</p>
     <div class="case-footer">
@@ -2254,11 +2267,11 @@ const pmBlockedLink=document.getElementById('pmBlockedLink');
 const pmUrlBar=document.getElementById('pmUrlBar');
 const pmLoading=document.getElementById('pmLoading');
 const pmBlocked=document.getElementById('pmBlocked');
-const pmPhoneBtn=document.getElementById('pmPhone');
-const pmDesktopBtn=document.getElementById('pmDesktop');
 let pmTrigger=null;
 
 function openPreview(c){
+  pmDevice.classList.remove('is-phone','is-desktop');
+  pmDevice.classList.add(window.innerWidth<768?'is-phone':'is-desktop');
   pmTitle.textContent=c.name;
   pmExt.href=c.url;pmBlockedLink.href=c.url;
   pmUrlBar.textContent=c.url.replace('https://','');
@@ -2280,14 +2293,6 @@ document.getElementById('casesGrid').addEventListener('click',e=>{
 });
 document.getElementById('pmClose').addEventListener('click',closePreview);
 pmModal.addEventListener('click',e=>{if(e.target===pmModal)closePreview();});
-pmPhoneBtn.addEventListener('click',()=>{
-  pmDevice.classList.remove('is-desktop');pmDevice.classList.add('is-phone');
-  pmPhoneBtn.classList.add('active');pmDesktopBtn.classList.remove('active');
-});
-pmDesktopBtn.addEventListener('click',()=>{
-  pmDevice.classList.remove('is-phone');pmDevice.classList.add('is-desktop');
-  pmDesktopBtn.classList.add('active');pmPhoneBtn.classList.remove('active');
-});
 
 /* ═══════════ SERVICE MODAL ═══════════ */
 const overlay=document.getElementById('svcModal');
