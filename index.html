@@ -965,6 +965,11 @@ section{scroll-margin-top:84px;}
 }
 @media(max-width:360px){#problem .flip-card{height:320px;}#about .founder-photo figcaption{flex-direction:column;}}
 
+
+/* Both faces share a grid cell; the longest face sets a stable, content-sized height. */
+#problem .flip-wrap{display:grid;}
+#problem .flip-card{display:grid;height:100%;min-height:0;}
+#problem .flip-front,#problem .flip-back{position:relative;inset:auto;grid-area:1 / 1;height:auto;min-height:0;}
 </style>
 </head>
 <body>
