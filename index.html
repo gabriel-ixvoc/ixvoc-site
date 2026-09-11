@@ -7,7 +7,7 @@
 <meta name="description" content="Sites que vendem, tráfego que retorna e marcas que geram confiança. A IXVOC transforma sua presença digital em um sistema claro de aquisição de clientes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════
    IXVOC — DESIGN SYSTEM
@@ -624,6 +624,178 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   /* the glow needs to keep its centring transform and its blur */
   .hwm-glow{opacity:1!important;transform:translateX(-50%)!important;filter:blur(34px)!important;}
 }
+
+/* Readability and conversion refinement. Brand wordmark styles stay independent. */
+:root{
+  --bg:#090B0D;--bg2:#101315;--surface:#14181B;--surface2:#1A2024;--surface3:#22292D;
+  --white:#F5F7F8;--soft:#CFD5D9;--muted:#AEB9BF;--faint:#92A0A8;
+  --border:rgba(255,255,255,.12);--border2:rgba(255,255,255,.19);
+  --neon2:#5CE0C4;--red:#FF8190;--r:8px;--r-lg:8px;
+}
+body{font-weight:400;}
+a,button{-webkit-tap-highlight-color:transparent;}
+button,a{touch-action:manipulation;}
+button{cursor:pointer;}
+a:focus-visible,button:focus-visible{outline:3px solid var(--neon);outline-offset:5px;}
+section{scroll-margin-top:84px;}
+[hidden]{display:none!important;}
+:is(.stitle,.ts-text,.flip-title,.svc-name,.cmp-head h3,.ps-name,.prom-card h3,.about-quote p,.q-title,.res-summary h3,.gargalo-text h4,.cta-title,.modal-name,.pp-quote,.fc h4){
+  font-family:var(--fb);font-weight:600;letter-spacing:0;text-wrap:balance;
+}
+.stitle{font-size:2.75rem;line-height:1.16;max-width:22ch;margin-left:auto;margin-right:auto;}
+.ts-text{font-size:2.5rem;line-height:1.24;max-width:28ch;}
+.cta-title{font-size:3.25rem;line-height:1.16;}
+.stitle .hl,.ts-text span,.cta-title span,.met-num{background:none;color:var(--neon);-webkit-text-fill-color:currentColor;filter:none;}
+.ssub{font-size:1.0625rem;font-weight:400;line-height:1.65;max-width:54ch;}
+.head-c{margin-bottom:44px;}
+.stag,.ts-label,.ps-tag,.pp-who,.pp-block h4,.modal-block-tag,.res-section-title,.opp-card .opp-tag,.qprog-label,.met-label,.fc h4,.about-quote cite,.fbot p,.fneon,.cta-email,.mi,.flip-tag{letter-spacing:0;}
+.stag,.ts-label{font-size:.8125rem;}
+.nl{gap:24px;}
+.nl a{font-size:.875rem;letter-spacing:0;text-transform:none;color:var(--soft);}
+.nc{font-size:.875rem;box-shadow:none;}
+#hero{min-height:92svh;}
+.hlabel{max-width:100%;justify-content:center;text-align:center;}
+.hsub{font-size:1.125rem;font-weight:400;line-height:1.65;max-width:620px;margin-top:32px;}
+.hsub strong{font-size:1.5rem;font-weight:600;line-height:1.3;color:var(--white);}
+.hacts{margin-top:30px;}
+.htrust{margin-top:26px;gap:20px;}
+.htrust span{font-size:.8125rem;letter-spacing:0;}
+.btn-p,.btn-g{min-height:52px;font-size:1rem;font-weight:600;justify-content:center;border-radius:8px;line-height:1.4;text-align:center;}
+.btn-p{background:var(--neon);box-shadow:0 4px 20px rgba(0,200,255,.13);}
+.btn-g{background:transparent;}
+.pain-item{min-height:54px;font-size:1rem;font-weight:400;border-radius:8px;}
+.pain-panel{background:var(--surface);box-shadow:none;}
+.pp-quote{font-size:1.5rem;line-height:1.3;}
+.pp-who{font-size:.8125rem;margin-bottom:20px;}
+.pp-block{padding:18px 0;margin-bottom:0;border-radius:0;background:none!important;border:0!important;border-top:1px solid var(--border)!important;}
+.pp-block h4{font-size:.8125rem;font-weight:600;}
+.pp-block p{font-size:1rem;line-height:1.65;}
+.pp-tags{margin-top:12px;gap:8px 14px;}
+.pp-tags span{padding:0;border:0;border-radius:0;background:none;font-size:.8125rem;}
+.pain-contact{display:inline-flex;gap:12px;align-items:center;min-height:44px;margin-top:18px;color:var(--neon);font-weight:600;text-decoration:none;}
+.tstrip{padding-top:64px;padding-bottom:64px;}
+.tstrip::before{display:none;}
+/* Keep both problem and solution readable without requiring hover. */
+.flip-card,.flip-wrap:hover .flip-card{height:100%;transform:none!important;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface);}
+.flip-front,.flip-back{position:relative;inset:auto;transform:none;backface-visibility:visible;border:0;border-radius:0;padding:24px;background:none;justify-content:flex-start;text-align:left;align-items:flex-start;overflow:visible;}
+.flip-front{flex:1;}
+.flip-back{border-top:1px solid var(--border);background:rgba(0,200,255,.04);margin:0;}
+.flip-front::before,.flip-back::before,.flip-hint,.flip-icon{display:none;}
+.flip-tag{font-size:.75rem;margin-bottom:10px;}
+.flip-title{font-size:1.25rem;line-height:1.3;}
+.flip-desc{font-size:1rem;line-height:1.6;}
+.svc-grid{gap:16px;margin-top:0;}
+.svc-card{background:var(--surface2);padding:24px;display:flex;flex-direction:column;align-items:flex-start;}
+.svc-icon{height:32px;line-height:32px;margin-bottom:20px;}
+.svc-name{font-size:1.125rem;line-height:1.3;min-height:2.6em;}
+.svc-teaser{font-size:.9375rem;line-height:1.6;flex:1;}
+.svc-open{opacity:1;transform:none;font-size:.8125rem;letter-spacing:0;text-transform:none;min-height:32px;}
+.modal-name{font-size:1.5rem;line-height:1.3;}
+.modal-block{border-radius:0;border:0!important;border-bottom:1px solid var(--border)!important;background:none!important;padding:0 0 22px;}
+.modal-block-tag{font-size:.8125rem;}
+.modal-block p,.modal-delivers li{font-size:1rem;line-height:1.65;}
+.modal-delivers h4{font-family:var(--fb);font-size:.875rem;letter-spacing:0;}
+.cmp-head h3{font-size:1.375rem;}
+.cmp-head p,.cmp-list li{font-size:1rem;letter-spacing:0;}
+.cmp-list li{padding:12px 0;}
+.cmp-col.us{box-shadow:none;}
+.met-card{background:transparent;border:0;border-radius:0;border-right:1px solid var(--border);padding:24px 18px;}
+.met-card:last-child{border-right:0;}
+.met-num{font-family:var(--fb);font-size:3rem;font-weight:600;font-variant-numeric:tabular-nums;min-height:1em;}
+.met-label{font-size:.875rem;text-transform:none;}
+.ps-name{font-size:1.25rem;line-height:1.3;}
+.ps-tag{font-size:.75rem;}
+.ps-desc{font-size:1rem;line-height:1.6;}
+.prom-card{background:var(--surface);}
+.prom-card h3{font-size:1.125rem;line-height:1.35;}
+.prom-card p,.at p{font-size:1rem;line-height:1.7;}
+.about-quote p{font-size:1.25rem;line-height:1.5;}
+.about-quote cite{font-size:.8125rem;}
+.at .stitle{margin-left:0;}
+.q-title{font-size:1.5rem;line-height:1.3;}
+.q-sub,.q-opt,.q-back,.q-next{font-size:1rem;font-weight:400;}
+.q-opt{min-height:54px;border-radius:8px;}
+.q-sub{line-height:1.6;}
+.q-back,.q-next{min-height:48px;}
+.res-summary h3{font-size:1.5rem;line-height:1.3;}
+.res-summary p,.gargalo-text p,.opp-card p,.rec-item span:last-child{font-size:1rem;line-height:1.6;}
+.gargalo-text h4{font-size:1.125rem;line-height:1.35;}
+.gargalo-card,.opp-card{border-radius:0;background:none;border:0;border-bottom:1px solid var(--border);padding:16px 0;}
+.opp-grid{gap:20px;}
+.rec-item{border:0;border-radius:0;background:none;padding:8px 0;}
+.faq-q{font-size:1.0625rem;font-weight:500;min-height:64px;}
+.faq-a p{font-size:1rem;line-height:1.7;}
+.cta-sub{font-size:1.125rem;line-height:1.65;}
+.cta-email{font-size:1rem;text-transform:none;}
+.fb-p,.fc ul a{font-size:.9375rem;}
+.fc ul a{display:inline-block;min-height:32px;}
+#mobmenu a{font-family:var(--fb);letter-spacing:0;}
+@media(hover:hover) and (pointer:fine){
+  body{cursor:auto;}
+  a,button,.svc-card,.flip-card,.pain-item,.q-opt,.faq-q{cursor:pointer;}
+  .flip-card{cursor:auto;}
+  #cdot,#cring{display:none;}
+}
+@media(max-width:1080px){
+ .nl{gap:14px;}
+ .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:960px){
+ .pp-inner,.pp-quote,.pp-who,.pp-block,.pp-block h4,.svc-card,.prom-card{text-align:left;}
+ .pp-block h4,.pp-tags{justify-content:flex-start;}
+ .svc-icon,.prom-ic{margin-left:0;}
+ .at .stitle{margin-left:auto;}
+ .prom-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+ .met-card:nth-child(2){border-right:0;}
+}
+@media(max-width:680px){
+ section{padding-top:64px;padding-bottom:64px;}
+ .stitle{font-size:2rem;line-height:1.2;}
+ .ts-text{font-size:1.875rem;}
+ .cta-title{font-size:2.25rem;line-height:1.2;}
+ .ssub{font-size:1rem;}
+ #hero{padding-top:120px;padding-bottom:76px;}
+ .hsub{font-size:1rem;margin-top:28px;}
+ .hsub strong{font-size:1.25rem;}
+ .hacts{gap:10px;margin-top:24px;}
+ .htrust span{font-size:.75rem;}
+ .hlabel{font-size:.625rem;letter-spacing:0;padding:8px 14px;}
+ .head-c{margin-bottom:30px;}
+ .svc-grid,.prom-grid{grid-template-columns:1fr;}
+ .svc-name{min-height:0;}
+ .svc-card{padding:24px;}
+ .pp-inner{padding:24px;}
+ .pp-quote{font-size:1.25rem;}
+ .pain-item{font-size:.9375rem;}
+ .flip-front,.flip-back{padding:22px;}
+ .met-num{font-size:2.5rem;}
+ .met-label{font-size:.8125rem;}
+ .modal-name{font-size:1.125rem;}
+ .modal-top>div{min-width:0;}
+ .modal-icon{display:none;}
+ .modal-close{min-height:44px;}
+ .q-title{font-size:1.25rem;}
+ .q-title,.q-sub{text-align:left;}
+ .q-opt{font-size:1rem;}
+ .q-back,.q-next{font-size:.9375rem;}
+ .faq-q{font-size:1rem;}
+ .faq-a p{font-size:1rem;}
+ .cta-sub{font-size:1rem;}
+ .cmp-head{text-align:left;}
+ .cmp-list li{font-size:1rem;}
+ .res-footer .btn-p{white-space:normal;}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto;}
+ .reveal,.ps-body{opacity:1;transform:none;}
+}
+
+.result-note{max-width:66ch;padding:22px 24px 0;margin:0 auto;color:var(--muted);font-size:.875rem;line-height:1.6;}
+.about-vis{overflow:clip;}
+@media(max-width:360px){.hwm{font-size:3.5rem;}}
+#cta::before{width:min(900px,100%);}
+.btn-p::after{display:none;}
+.btn-p,.btn-g{max-width:100%;}
 </style>
 </head>
 <body>
@@ -636,28 +808,28 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
 
 <!-- ═══ NAV ═══ -->
 <nav id="nb">
-  <a href="#hero" class="nm"><span class="nm-dot"></span>I<span>X</span>VO<span class="sigma">ς</span></a>
+  <a href="#hero" class="nm"><span class="nm-dot"></span>IXVOC</a>
   <ul class="nl">
-    <li><a href="#pains">Suas dores</a></li>
-    <li><a href="#services">Serviços</a></li>
+    <li><a href="#pains">Desafios</a></li>
+    <li><a href="#services">Soluções</a></li>
     <li><a href="#compare">Diferença</a></li>
     <li><a href="#process">Processo</a></li>
     <li><a href="#diag">Diagnóstico</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#faq">Dúvidas</a></li>
   </ul>
-  <a href="#cta" class="nc">Iniciar projeto</a>
-  <button class="nburger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a href="https://wa.me/5511993223865?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20projeto%20para%20minha%20empresa." class="nc" target="_blank" rel="noopener noreferrer">Iniciar projeto</a>
+  <button class="nburger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobmenu"><span></span><span></span><span></span></button>
 </nav>
 
-<div id="mobmenu">
-  <a href="#pains">Suas dores</a>
-  <a href="#services">Serviços</a>
+<div id="mobmenu" inert>
+  <a href="#pains">Desafios</a>
+  <a href="#services">Soluções</a>
   <a href="#compare">A diferença</a>
   <a href="#process">Processo</a>
   <a href="#diag">Diagnóstico</a>
-  <a href="#faq">FAQ</a>
+  <a href="#faq">Dúvidas</a>
   <a href="#about">Sobre</a>
-  <a href="#cta" class="mm-cta">Iniciar projeto</a>
+  <a href="https://wa.me/5511993223865?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20projeto%20para%20minha%20empresa." class="mm-cta" target="_blank" rel="noopener noreferrer">Iniciar projeto</a>
 </div>
 
 <main>
@@ -678,19 +850,19 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
       <div class="hwm-sweep"></div>
     </div>
 
-    <p class="hsub">Site bonito não basta. A IXVOC cria páginas que explicam rápido, geram confiança e levam o cliente para a ação.</p>
+    <p class="hsub"><strong>Seu próximo cliente precisa entender por que escolher você.</strong><br>Sites claros, anúncios conectados e um caminho simples até o contato.</p>
 
     <div class="hacts">
-      <a href="#diag" class="btn-p">
+      <a href="https://wa.me/5511993223865?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20projeto%20para%20minha%20empresa." class="btn-p" target="_blank" rel="noopener noreferrer">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Fazer diagnóstico gratuito
+        Conversar sobre meu projeto
       </a>
-      <a href="#pains" class="btn-g">Ver onde você perde venda</a>
+      <a href="#services" class="btn-g">Conhecer as soluções</a>
     </div>
 
     <div class="htrust">
-      <span>Diagnóstico gratuito em 2 minutos</span>
-      <span>Proposta em até 24h</span>
+      <span>Sites, anúncios e estratégia</span>
+      <span>Conversa sem compromisso</span>
       <span>Sem contrato de fidelidade</span>
     </div>
   </div>
@@ -707,14 +879,14 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   <div class="container">
     <div class="head-c reveal">
       <span class="stag stag-red">Isso soa familiar?</span>
-      <h2 class="stitle">Seu digital está <br><span class="hlr">vazando venda</span>.</h2>
-      <p class="ssub">Escolha sua maior dor. A resposta aparece na hora, sem enrolação.</p>
+      <h2 class="stitle">O que está travando <br><span class="hlr">suas vendas?</span></h2>
+      <p class="ssub">Poucos contatos, anúncios sem retorno ou um site que não convence. Existe um próximo passo para cada cenário.</p>
     </div>
 
     <div class="pain-layout reveal">
       <div class="pain-list" id="painList"></div>
       <div class="pain-panel" id="painPanel">
-        <div class="pp-inner" id="ppInner"></div>
+        <div class="pp-inner" id="ppInner" aria-live="polite"></div>
       </div>
     </div>
   </div>
@@ -723,7 +895,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
 <!-- ═══ TRANSITION ═══ -->
 <div class="tstrip reveal">
   <p class="ts-label">A virada</p>
-  <h2 class="ts-text">Não é sobre ter mais um site. <br>É sobre transformar visita em cliente.</h2>
+  <h2 class="ts-text">Ser encontrado. Gerar confiança. <br><span>Facilitar a escolha.</span></h2>
 </div>
 
 <!-- ═══ FLIP CARDS ═══ -->
@@ -731,8 +903,8 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   <div class="container">
     <div class="head-c reveal">
       <span class="stag stag-red">O diagnóstico honesto</span>
-      <h2 class="stitle">Três pontos onde <br>seu digital perde dinheiro.</h2>
-      <p class="ssub">Veja onde o resultado costuma escapar — e como corrigimos.</p>
+      <h2 class="stitle">Do problema <br>à solução.</h2>
+      <p class="ssub">Cada ajuste tem um objetivo: aproximar o cliente da decisão.</p>
     </div>
     <div class="flip-grid">
 
@@ -747,7 +919,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
           </div>
           <div class="flip-back">
             <span class="flip-tag flip-tag-sol">✓ Nossa solução</span>
-            <h3 class="flip-title">Design estratégico, não decorativo</h3>
+            <h3 class="flip-title">Oferta clara. Contato fácil.</h3>
             <p class="flip-desc">Organizamos a página para explicar, criar confiança e gerar ação.</p>
           </div>
         </div>
@@ -764,7 +936,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
           </div>
           <div class="flip-back">
             <span class="flip-tag flip-tag-sol">✓ Nossa solução</span>
-            <h3 class="flip-title">Anúncio e página falando a mesma língua</h3>
+            <h3 class="flip-title">Campanha e página conectadas</h3>
             <p class="flip-desc">Ligamos campanha, página e conversão para medir o que vende.</p>
           </div>
         </div>
@@ -781,7 +953,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
           </div>
           <div class="flip-back">
             <span class="flip-tag flip-tag-sol">✓ Nossa solução</span>
-            <h3 class="flip-title">Presença que gera autoridade</h3>
+            <h3 class="flip-title">Uma marca fácil de escolher</h3>
             <p class="flip-desc">Ajustamos presença, marca e SEO para você ser encontrado e levado a sério.</p>
           </div>
         </div>
@@ -796,15 +968,15 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   <div class="container">
     <div class="head-c reveal">
       <span class="stag">O que entregamos</span>
-      <h2 class="stitle">Serviços diretos para <br><span class="hl">problemas reais</span>.</h2>
-      <p class="ssub">Clique e veja o que muda na prática.</p>
+      <h2 class="stitle">O que seu negócio <br><span class="hl">precisa agora.</span></h2>
+      <p class="ssub">Da primeira visita ao contato: escolha a solução para o seu momento.</p>
     </div>
     <div class="svc-grid" id="svcgrid"></div>
   </div>
 </section>
 
 <!-- SERVICE MODAL -->
-<div class="modal-overlay" id="svcModal">
+<div class="modal-overlay" id="svcModal" role="dialog" aria-modal="true" aria-labelledby="mName" inert>
   <div class="modal-panel">
     <div class="mgrab"></div>
     <div class="modal-top">
@@ -829,7 +1001,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
       </div>
     </div>
     <div class="modal-cta">
-      <a href="#cta" class="btn-p" id="mCTA">
+      <a href="https://wa.me/5511993223865?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20projeto%20para%20minha%20empresa." class="btn-p" id="mCTA" target="_blank" rel="noopener noreferrer">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         Quero este serviço
       </a>
@@ -842,14 +1014,14 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   <div class="container">
     <div class="head-c reveal">
       <span class="stag">A diferença</span>
-      <h2 class="stitle">Menos promessa. <br><span class="hlr">Mais clareza</span>.</h2>
-      <p class="ssub">O que muda quando o projeto nasce para vender e ser medido.</p>
+      <h2 class="stitle">Você acompanha. <br><span class="hl">Você entende.</span></h2>
+      <p class="ssub">Entrega, prazo e medição definidos desde o início.</p>
     </div>
     <div class="cmp-wrap">
       <div class="cmp-col them reveal">
         <div class="cmp-head">
-          <h3>O jeito comum</h3>
-          <p>Por isso não funcionou</p>
+          <h3>Sem uma estratégia</h3>
+          <p>O que dificulta crescer</p>
         </div>
         <ul class="cmp-list">
           <li><span class="cmp-ic">✕</span>Entrega o site e some depois do “no ar”.</li>
@@ -885,20 +1057,20 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   <div class="container">
     <div class="met-grid">
       <div class="met-card reveal">
-        <div class="met-num" data-target="87" data-suffix="%">0%</div>
-        <div class="met-label">Aumento médio de conversão</div>
+        <div class="met-num" data-target="5">0</div>
+        <div class="met-label">Etapas do seu projeto</div>
       </div>
       <div class="met-card reveal" style="transition-delay:.08s">
-        <div class="met-num" data-target="48" data-suffix="h">0h</div>
-        <div class="met-label">Entrega de landing page</div>
+        <div class="met-num" data-target="8">0</div>
+        <div class="met-label">Soluções integradas</div>
       </div>
       <div class="met-card reveal" style="transition-delay:.16s">
-        <div class="met-num" data-prefix="+" data-target="120">0</div>
-        <div class="met-label">Projetos entregues</div>
+        <div class="met-num" data-target="100" data-suffix="%">0</div>
+        <div class="met-label">Acessos no seu nome</div>
       </div>
       <div class="met-card reveal" style="transition-delay:.24s">
-        <div class="met-num" data-target="4.9" data-suffix="★">0★</div>
-        <div class="met-label">Nota média dos clientes</div>
+        <div class="met-num" data-target="0">0</div>
+        <div class="met-label">Fidelidade obrigatória</div>
       </div>
     </div>
   </div>
@@ -909,8 +1081,8 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   <div class="container">
     <div class="head-c reveal">
       <span class="stag">Metodologia</span>
-      <h2 class="stitle">Do problema ao <span class="hl">resultado</span></h2>
-      <p class="ssub">Um processo simples para tirar o digital do improviso.</p>
+      <h2 class="stitle">Seu projeto, <span class="hl">passo a passo.</span></h2>
+      <p class="ssub">Você participa das decisões e acompanha cada entrega.</p>
     </div>
     <div class="proc-timeline" id="ptl">
       <div id="procFill"></div>
@@ -918,7 +1090,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
       <div class="proc-step left">
         <div class="ps-body">
           <div class="ps-tag">⚠ Você não sabe onde está perdendo</div>
-          <div class="ps-name">Diagnóstico & Estratégia</div>
+          <div class="ps-name">Entender seu negócio</div>
           <p class="ps-desc">Mapeamos onde você perde cliente e qual caminho precisa existir.</p>
         </div>
         <div class="ps-num">01</div>
@@ -930,15 +1102,15 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
         <div class="ps-num">02</div>
         <div class="ps-body">
           <div class="ps-tag">⚠ Sites nascem sem plano</div>
-          <div class="ps-name">Wireframe & Arquitetura</div>
-          <p class="ps-desc">Definimos oferta, seções e CTAs antes do design.</p>
+          <div class="ps-name">Organizar a mensagem</div>
+          <p class="ps-desc">Definimos o que dizer e como levar o visitante até o contato.</p>
         </div>
       </div>
 
       <div class="proc-step left">
         <div class="ps-body">
           <div class="ps-tag">⚠ Aparência que afasta</div>
-          <div class="ps-name">Design de Alta Fidelidade</div>
+          <div class="ps-name">Dar forma à sua marca</div>
           <p class="ps-desc">Visual forte, legível e pensado para conversão.</p>
         </div>
         <div class="ps-num">03</div>
@@ -950,7 +1122,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
         <div class="ps-num">04</div>
         <div class="ps-body">
           <div class="ps-tag sol">✓ Performance sem desculpa</div>
-          <div class="ps-name">Desenvolvimento</div>
+          <div class="ps-name">Construir e testar</div>
           <p class="ps-desc">Site rápido, responsivo e pronto para medir conversões.</p>
         </div>
       </div>
@@ -958,7 +1130,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
       <div class="proc-step left">
         <div class="ps-body">
           <div class="ps-tag sol">✓ Não acaba aqui</div>
-          <div class="ps-name">Lançamento & Otimização</div>
+          <div class="ps-name">Publicar e melhorar</div>
           <p class="ps-desc">Publicamos, medimos e ajustamos com dados reais.</p>
         </div>
         <div class="ps-num">05</div>
@@ -974,7 +1146,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   <div class="container">
     <div class="head-c reveal">
       <span class="stag">Nossos compromissos</span>
-      <h2 class="stitle">O que você pode <span class="hl">cobrar da gente</span>.</h2>
+      <h2 class="stitle">Clareza antes. <br><span class="hl">Suporte depois.</span></h2>
       <p class="ssub">O básico bem feito: clareza, prazo e responsabilidade.</p>
     </div>
     <div class="prom-grid">
@@ -1018,11 +1190,11 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
     <div class="about-grid">
       <div class="at reveal">
         <span class="stag">Sobre a IXVOC</span>
-        <h2 class="stitle">Uma pegada que dura.</h2>
-        <p>IXVOC nasceu para unir estratégia, design e dados em páginas que deixam marca e geram ação.</p>
-        <p>Sem site genérico, sem achismo. Cada decisão precisa ajudar o cliente a entender, confiar e chamar.</p>
+        <h2 class="stitle">Estratégia com nome <br>e responsabilidade.</h2>
+        <p>A IXVOC une estratégia, design e desenvolvimento para apresentar o valor do seu negócio com clareza.</p>
+        <p>Você conversa sobre o seu negócio. Nós transformamos essa conversa em uma presença digital feita para gerar oportunidades.</p>
         <div class="about-quote">
-          <p>"Não fazemos site bonito. Fazemos presença que vende."</p>
+          <p>"O cliente precisa entender seu valor antes de perguntar seu preço."</p>
           <cite>— Gabriel Sarzi, Fundador · IXVOC</cite>
         </div>
       </div>
@@ -1031,7 +1203,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
           <span class="odot"></span>
           <span class="odot"></span>
           <div class="aoring-inner">
-            I<span>X</span>VO<span class="sigma">ς</span>
+            IXVOC
             <small>Est. 2024</small>
           </div>
         </div>
@@ -1045,8 +1217,8 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   <div class="container">
     <div class="head-c reveal">
       <span class="stag">Diagnóstico gratuito</span>
-      <h2 class="stitle">Veja onde seu site <br><span class="hlr">perde dinheiro</span>.</h2>
-      <p class="ssub">8 perguntas rápidas. No final, você recebe o próximo passo.</p>
+      <h2 class="stitle">Descubra seu <br><span class="hl">próximo passo.</span></h2>
+      <p class="ssub">8 perguntas, cerca de 2 minutos. Orientação inicial sem cadastro.</p>
     </div>
 
     <div id="diagQuiz" class="reveal">
@@ -1087,27 +1259,28 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
                 </linearGradient>
               </defs>
               <text x="60" y="56" text-anchor="middle" font-family="Syne,sans-serif" font-weight="800" font-size="23" fill="#EDF1FF" id="gaugePct">0%</text>
-              <text x="60" y="72" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(237,241,255,.4)" letter-spacing="1">APROVEITAMENTO</text>
+              <text x="60" y="72" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#AEB9BF" letter-spacing="0">ÍNDICE INICIAL</text>
             </svg>
-            <span class="gauge-label">Digital Score</span>
+            <span class="gauge-label">Índice orientativo</span>
           </div>
           <div class="res-summary">
             <h3 id="resTitle"></h3>
             <p id="resSub"></p>
           </div>
         </div>
+        <p class="result-note">Orientação automática baseada nas suas respostas. O índice não mede conversão nem substitui uma análise do seu site.</p>
         <div class="res-body">
-          <div class="res-section-title">⚠ Gargalo principal identificado</div>
+          <div class="res-section-title">Prioridade sugerida</div>
           <div class="gargalo-card" id="resGargalo"></div>
-          <div class="res-section-title">✦ Oportunidades imediatas</div>
+          <div class="res-section-title">Possíveis próximos passos</div>
           <div class="opp-grid" id="resOpps"></div>
           <div class="res-section-title">O que a IXVOC recomenda para você</div>
           <div class="rec-grid" id="resRecs"></div>
         </div>
         <div class="res-footer">
-          <a href="#cta" class="btn-p">
+          <a href="https://wa.me/5511993223865?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20projeto%20para%20minha%20empresa." class="btn-p" id="diagContact" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            Quero resolver isso agora
+            Conversar sobre meu diagnóstico
           </a>
           <button class="btn-restart" id="diagRestart">↺ Refazer diagnóstico</button>
         </div>
@@ -1121,7 +1294,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   <div class="container">
     <div class="head-c reveal">
       <span class="stag">Perguntas frequentes</span>
-      <h2 class="stitle">Perguntas antes <br>de começar.</h2>
+      <h2 class="stitle">Antes de começar.</h2>
     </div>
     <div class="faq-list reveal" id="faqList"></div>
   </div>
@@ -1131,12 +1304,12 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
 <section id="cta">
   <div class="container">
     <div class="cta-inner reveal">
-      <span class="stag" style="justify-content:center">Era isso que faltava</span>
-      <h2 class="cta-title">Vamos transformar <br><span>visita em cliente.</span></h2>
-      <p class="cta-sub">Conte seu cenário. A IXVOC responde com caminho, prazo e investimento.</p>
-      <a href="mailto:contato@ixvoc.com.br" class="btn-p">
+      <span class="stag" style="justify-content:center">Vamos conversar</span>
+      <h2 class="cta-title">Seu negócio tem valor. <br><span>Vamos mostrar isso.</span></h2>
+      <p class="cta-sub">Conte o que você vende e o que quer melhorar. Você recebe uma proposta com escopo, prazo e investimento.</p>
+      <a href="https://wa.me/5511993223865?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20projeto%20para%20minha%20empresa." class="btn-p" id="contactCTA" target="_blank" rel="noopener noreferrer">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        Falar com a equipe
+        Conversar no WhatsApp
       </a>
       <br>
       <a href="mailto:contato@ixvoc.com.br" class="cta-email">contato@ixvoc.com.br</a>
@@ -1150,7 +1323,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
 <footer>
   <div class="fg">
     <div>
-      <span class="fmark">I<span>X</span>VO<span class="sigma">ς</span></span>
+      <span class="fmark">IXVOC</span>
       <p class="fb-p">Sites, tráfego e estratégia para vender melhor online.</p>
     </div>
     <div class="fc">
@@ -1166,7 +1339,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
     <div class="fc">
       <h4>Navegar</h4>
       <ul>
-        <li><a href="#pains">Suas dores</a></li>
+        <li><a href="#pains">Desafios</a></li>
         <li><a href="#compare">A diferença</a></li>
         <li><a href="#diag">Diagnóstico gratuito</a></li>
         <li><a href="#about">Sobre a IXVOC</a></li>
@@ -1182,149 +1355,300 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
 
 <script>
 /* ═══════════ DATA ═══════════ */
-const MARQUEE = ['Sites de Alta Conversão','Tráfego Pago Cirúrgico','Branding que Vende','SEO Técnico','Google Ads','Meta Ads','Hospedagem Gerenciada','Analytics & CRO','Automação de Leads'];
+const MARQUEE = ['Sites de Alta Conversão','Tráfego Pago','Branding que Vende','SEO Técnico','Google Ads','Meta Ads','Hospedagem Gerenciada','Analytics & CRO','Automação de Leads'];
 
 const PAINS = [
   {
-    short:'Já investi em marketing e perdi dinheiro',
-    quote:'Já paguei agência antes e não vi resultado nenhum.',
-    who:'A dor nº 1 de quem já tentou',
-    why:'Na maioria das vezes o dinheiro não foi mal gasto por acaso: faltava rastreamento. Sem conversão configurada, ninguém sabe qual anúncio gerou qual cliente — então não há o que otimizar. O resultado vira sorte, e sorte não se escala.',
-    fix:'Antes de investir um real, configuramos o rastreamento completo: pixel, eventos de conversão e origem de cada contato. Você passa a enxergar exatamente onde o dinheiro entra e sai — e nós otimizamos com base em dado, não em achismo.',
-    tags:['Rastreamento completo','Relatório de dono','Otimização semanal']
+    "short": "Já investi e não vi retorno",
+    "quote": "Paguei por marketing. Não sei o que voltou.",
+    "who": "Investimento sem clareza",
+    "why": "Sem medir os contatos gerados, fica difícil saber quais campanhas merecem mais investimento.",
+    "fix": "Conectamos anúncios, site e medição para mostrar a origem e o custo de cada oportunidade.",
+    "tags": [
+      "Origem dos contatos",
+      "Custo por contato",
+      "Decisões com dados"
+    ]
   },
   {
-    short:'Não tenho previsibilidade de faturamento',
-    quote:'Um mês fatura bem, no outro mal pago as contas.',
-    who:'Quem vive de altos e baixos',
-    why:'Quando a entrada de clientes depende de indicação, sazonalidade ou do humor do algoritmo, não existe previsibilidade. Você não consegue planejar, contratar ou investir — porque não sabe quanto entra no mês que vem.',
-    fix:'Construímos uma máquina de aquisição com múltiplas fontes: site que converte, tráfego pago mensurável e presença orgânica no Google. Fluxo constante de oportunidades te devolve o poder de planejar o próximo trimestre.',
-    tags:['Aquisição multicanal','Fluxo previsível','Planejamento real']
+    "short": "Não tenho constância nas vendas",
+    "quote": "Cada mês começa do zero.",
+    "who": "Captação irregular",
+    "why": "Depender de um único canal deixa a entrada de clientes mais vulnerável.",
+    "fix": "Combinamos site, campanhas e busca no Google para ampliar suas fontes de oportunidades.",
+    "tags": [
+      "Mais canais",
+      "Captação contínua",
+      "Planejamento"
+    ]
   },
   {
-    short:'Não sei de onde vêm meus clientes',
-    quote:'Chegam clientes, mas não faço ideia de como me acharam.',
-    who:'Decidindo no escuro',
-    why:'Sem analytics e rastreamento de origem, você gerencia no chute. Continua pagando por canais que não trazem nada e deixa de investir no que realmente funciona — porque simplesmente não dá para ver a diferença.',
-    fix:'Implantamos analytics, eventos de conversão e um painel simples que responde três perguntas: quantos contatos entraram, de onde vieram e quanto custou cada um. Você corta o que não funciona e dobra o que funciona.',
-    tags:['Analytics configurado','Painel simples','Custo por lead visível']
+    "short": "Não sei de onde vêm meus clientes",
+    "quote": "Não sei o que realmente funciona.",
+    "who": "Falta de medição",
+    "why": "Sem acompanhar a origem dos contatos, você pode investir no canal errado.",
+    "fix": "Configuramos eventos e relatórios para acompanhar contatos, origem e custo.",
+    "tags": [
+      "Analytics",
+      "Relatórios claros",
+      "Conversões"
+    ]
   },
   {
-    short:'Dependo de indicação para sobreviver',
-    quote:'Se pararem de me indicar, meu negócio para.',
-    who:'Refém da boa vontade dos outros',
-    why:'Indicação é ótima — mas é um canal que você não controla. Ela não escala, não acelera quando você precisa e some justamente nos meses fracos. É crescimento sem volante.',
-    fix:'Criamos canais próprios que você controla: site que capta 24h por dia, campanhas que ligam e desligam conforme sua meta e presença no Google para quem já está procurando. Indicação vira bônus, não a base.',
-    tags:['Canais próprios','Captação 24/7','Escala sob controle']
+    "short": "Dependo de indicação",
+    "quote": "Quero ser encontrado por novos clientes.",
+    "who": "Poucos canais de aquisição",
+    "why": "Indicações ajudam, mas nem sempre chegam no ritmo de que seu negócio precisa.",
+    "fix": "Criamos um site claro e canais de aquisição para alcançar quem procura o que você oferece.",
+    "tags": [
+      "Site próprio",
+      "Google",
+      "Campanhas"
+    ]
   },
   {
-    short:'Meu concorrente pior vende mais que eu',
-    quote:'Meu serviço é melhor, mas quem aparece é ele.',
-    who:'A frustração silenciosa',
-    why:'O cliente não escolhe o melhor — escolhe o que ele encontra e no qual confia. Se o concorrente aparece primeiro no Google, tem site profissional e identidade consistente, ele ganha antes da comparação começar.',
-    fix:'Trabalhamos os três pontos que decidem essa disputa: ser encontrado (SEO e tráfego), parecer confiável (branding e design) e converter quem chega (UX e copy). Seu diferencial real finalmente fica visível.',
-    tags:['SEO técnico','Branding profissional','UX de conversão']
+    "short": "Meu concorrente aparece mais",
+    "quote": "Meu trabalho é bom. Meu digital não mostra isso.",
+    "who": "Pouca visibilidade",
+    "why": "Um serviço de qualidade precisa ser encontrado e transmitir confiança antes do primeiro contato.",
+    "fix": "Alinhamos presença no Google, identidade e mensagem para destacar seu diferencial.",
+    "tags": [
+      "Visibilidade",
+      "Marca consistente",
+      "Oferta clara"
+    ]
   },
   {
-    short:'Não sei como cobrar mais caro',
-    quote:'Sempre entro na guerra de preço e saio perdendo.',
-    who:'Preço no lugar de posicionamento',
-    why:'Quando nada comunica valor, só sobra o preço para comparar. Site fraco, marca inconsistente e ausência de prova social fazem qualquer valor parecer alto — mesmo quando o serviço é superior.',
-    fix:'Construímos o posicionamento: identidade que transmite autoridade, site que apresenta método e resultado, conteúdo que educa o cliente antes da conversa. Quando o valor fica claro, o preço para de ser objeção.',
-    tags:['Posicionamento','Prova de valor','Autoridade digital']
+    "short": "Só me comparam por preço",
+    "quote": "Quero mostrar por que meu serviço vale mais.",
+    "who": "Valor pouco claro",
+    "why": "Quando a diferença entre as opções não aparece, o preço vira o principal critério.",
+    "fix": "Apresentamos seu método, seus diferenciais e suas provas reais de forma simples.",
+    "tags": [
+      "Posicionamento",
+      "Diferenciais",
+      "Provas reais"
+    ]
   },
   {
-    short:'Perco cliente no celular e nem percebo',
-    quote:'Nunca ninguém reclamou do meu site.',
-    who:'O prejuízo invisível',
-    why:'Quem tem má experiência não reclama — apenas sai. Site lento, quebrado no celular ou com formulário difícil perde a venda em silêncio. A maior parte do seu tráfego é mobile, e é justamente ali que costuma vazar.',
-    fix:'Desenvolvemos mobile-first com Core Web Vitals no verde, formulários curtos e caminho direto para o WhatsApp. Depois medimos o comportamento real para achar e fechar cada ponto de fuga.',
-    tags:['Mobile-first','Velocidade real','Correção de fuga']
+    "short": "Meu site é ruim no celular",
+    "quote": "O cliente chega, mas não chama.",
+    "who": "Experiência com atrito",
+    "why": "Lentidão, texto pequeno e botões difíceis podem fazer o visitante desistir.",
+    "fix": "Melhoramos velocidade, leitura e navegação para facilitar o contato pelo celular.",
+    "tags": [
+      "Leitura fácil",
+      "Carregamento rápido",
+      "Contato direto"
+    ]
   },
   {
-    short:'Meu negócio não funciona sem mim',
-    quote:'Se eu paro, tudo para. Não consigo sair da operação.',
-    who:'A prisão disfarçada de empresa',
-    why:'Enquanto a captação e o atendimento inicial dependem de você, não existe empresa — existe autoemprego. Cada lead perdido por demora é receita que evapora enquanto você resolve outra coisa.',
-    fix:'Automatizamos a entrada: site que qualifica, formulário que segmenta, resposta automática e follow-up que não deixa lead esfriar. A operação de captação passa a rodar sozinha e você volta a trabalhar no negócio.',
-    tags:['Automação de leads','Follow-up automático','Qualificação prévia']
+    "short": "Demoro para responder contatos",
+    "quote": "Perco oportunidades enquanto trabalho.",
+    "who": "Atendimento manual",
+    "why": "Sem organizar o primeiro atendimento, contatos importantes podem ficar sem resposta.",
+    "fix": "Integramos formulários, CRM e lembretes para acompanhar cada oportunidade.",
+    "tags": [
+      "Organização",
+      "Integrações",
+      "Acompanhamento"
+    ]
   },
   {
-    short:'Não sei em quem confiar',
-    quote:'Já tomei cano de freelancer e de agência.',
-    who:'Barreira de confiança',
-    why:'Depois de promessas não cumpridas, qualquer novo prestador vira risco. E o pior: o medo de errar de novo faz você adiar decisões necessárias, o que custa mais caro do que a tentativa frustrada.',
-    fix:'Trabalhamos com escopo e prazo por escrito, etapas visíveis, sem fidelidade contratual e com tudo no seu nome — domínio, contas e código. Você pode sair quando quiser. Nós ficamos porque o resultado justifica.',
-    tags:['Escopo por escrito','Sem fidelidade','Acessos no seu nome']
+    "short": "Tenho receio de contratar de novo",
+    "quote": "Quero saber o que vou receber.",
+    "who": "Falta de transparência",
+    "why": "Escopo vago e falta de acompanhamento tornam a contratação mais insegura.",
+    "fix": "Definimos entregas e prazos por escrito, com etapas visíveis e acessos no seu nome.",
+    "tags": [
+      "Escopo definido",
+      "Etapas visíveis",
+      "Seus acessos"
+    ]
   }
 ];
 
 const SVCS = [
-  {icon:'⚡',name:'Sites de Alta Conversão',
-   prob:'Seu site atual é um cartão de visita parado. Sem hierarquia visual, sem CTA estratégico, sem jornada pensada. O visitante chega, não entende o que você faz em 5 segundos, e vai embora para o concorrente.',
-   sol:'Desenvolvemos landing pages e sites institucionais com foco total em conversão. Cada seção tem um propósito, cada botão tem uma razão, cada frase é pensada para mover o visitante na direção certa.',
-   delivers:['Wireframe estratégico','Design de alta fidelidade','Desenvolvimento responsivo','Copy focada em conversão','Analytics configurado','Core Web Vitals no verde']},
-  {icon:'📡',name:'Tráfego Pago',
-   prob:'Você investe em anúncios mas não sabe o que está funcionando. O dinheiro sai e os relatórios não dizem nada de útil. Você não consegue ligar um anúncio a um cliente real.',
-   sol:'Campanhas cirúrgicas em Google Ads e Meta Ads com rastreamento completo de conversões. Sabemos qual anúncio, qual público e qual criativo gerou cada contato — e escalamos apenas o que dá retorno.',
-   delivers:['Auditoria da conta','Estrutura de campanhas','Criativos testados','Otimização semanal','Rastreamento de conversão','Relatório de custo por lead']},
-  {icon:'🔍',name:'SEO Técnico',
-   prob:'Seus clientes pesquisam no Google exatamente o que você vende — e encontram o concorrente. Quem não é achado não é escolhido, e você acaba pagando caro por cada visita.',
-   sol:'Estratégia de SEO técnico e de conteúdo para o seu site aparecer nas primeiras posições quando o cliente está pronto para comprar. Tráfego que não para quando você desliga o anúncio.',
-   delivers:['Auditoria técnica','Otimização on-page','Estratégia de conteúdo','Google Meu Negócio','Velocidade e indexação','Relatório mensal de posição']},
-  {icon:'🎯',name:'Branding Digital',
-   prob:'Sua marca não transmite confiança. Logo genérico, identidade inconsistente, presença que afasta em vez de atrair. O cliente te compara e escolhe quem parece mais profissional.',
-   sol:'Identidade visual que comunica quem você é antes de você falar uma palavra. Uma marca que gera autoridade e faz o cliente chegar na conversa já querendo contratar.',
-   delivers:['Logotipo profissional','Paleta e tipografia','Brand book completo','Templates de redes sociais','Padrões de aplicação','Direção de tom de voz']},
-  {icon:'🚀',name:'Hospedagem Gerenciada',
-   prob:'Site lento, fora do ar, sem SSL — e você só descobre quando o cliente reclama ou o anúncio para de rodar. Cada segundo de lentidão custa conversão real.',
-   sol:'Infraestrutura premium gerenciada e monitorada. Você foca no negócio, nós garantimos que o site está sempre no ar, rápido e seguro.',
-   delivers:['Servidor de alta performance','CDN global','SSL automático','Backups diários','Monitoramento de uptime','Suporte técnico proativo']},
-  {icon:'📊',name:'Analytics & CRO',
-   prob:'Você decide no achismo. Não sabe qual página converte, qual botão ninguém clica, onde as pessoas saem. Está deixando dinheiro na mesa todo dia sem perceber.',
-   sol:'Rastreamento completo e otimização contínua com base em dado real. Testes, mapas de calor e relatórios claros para converter mais com o mesmo tráfego.',
-   delivers:['Setup de analytics','Eventos de conversão','Painel personalizado','Testes A/B','Mapas de calor e gravações','Relatório mensal de CRO']},
-  {icon:'🛒',name:'E-commerce',
-   prob:'Sua loja perde cliente no checkout. Processo complicado, poucas formas de pagamento, experiência frustrante. A pessoa quer comprar mas desiste antes de finalizar.',
-   sol:'Lojas otimizadas do catálogo ao pagamento. Checkout simplificado, integração com os principais meios de pagamento e UX que reduz o abandono de carrinho.',
-   delivers:['Loja completa','Integração de pagamento','Gestão de estoque','Recuperação de carrinho','Relatório de vendas','Integração com marketplaces']},
-  {icon:'🔧',name:'Automação & Integrações',
-   prob:'Você faz manualmente o que poderia ser automático. Responde sempre a mesma mensagem, perde lead por falta de follow-up, some tempo que deveria ir para o negócio.',
-   sol:'Automações e integrações que trabalham por você 24 horas por dia. CRM, e-mail, WhatsApp e fluxos de nutrição que convertem lead em cliente enquanto você dorme.',
-   delivers:['CRM configurado','Automação de e-mail','Integração com WhatsApp','Fluxos de nutrição','Follow-up automático','Integração entre sistemas']}
+  {
+    "icon": "⚡",
+    "name": "Sites de Alta Conversão",
+    "teaser": "Apresente seu valor e facilite o contato.",
+    "prob": "O visitante chega, mas não entende a oferta ou não sabe como falar com você.",
+    "sol": "Criamos sites e landing pages com mensagem clara, boa leitura no celular e caminho direto até o contato.",
+    "delivers": [
+      "Estrutura da página",
+      "Design personalizado",
+      "Versão para celular",
+      "Textos da oferta",
+      "Medição de contatos",
+      "Testes de velocidade"
+    ]
+  },
+  {
+    "icon": "📡",
+    "name": "Tráfego Pago",
+    "teaser": "Alcance quem procura o que você vende.",
+    "prob": "Você investe em anúncios sem saber quais geram oportunidades.",
+    "sol": "Conectamos campanhas de Google Ads e Meta Ads à página e à medição de contatos.",
+    "delivers": [
+      "Análise da conta",
+      "Campanhas e públicos",
+      "Criativos",
+      "Ajustes de campanha",
+      "Medição de conversões",
+      "Relatório de custos"
+    ]
+  },
+  {
+    "icon": "🔍",
+    "name": "SEO Técnico",
+    "teaser": "Melhore sua presença nas buscas.",
+    "prob": "Seu negócio é difícil de encontrar quando o cliente pesquisa.",
+    "sol": "Ajustamos a estrutura e o conteúdo do site para facilitar a descoberta no Google. Posições dependem do mercado e da concorrência.",
+    "delivers": [
+      "Auditoria do site",
+      "Ajustes nas páginas",
+      "Plano de conteúdo",
+      "Perfil da Empresa no Google",
+      "Velocidade e indexação",
+      "Acompanhamento"
+    ]
+  },
+  {
+    "icon": "🎯",
+    "name": "Branding Digital",
+    "teaser": "Mostre o valor da sua marca.",
+    "prob": "Sua identidade não representa a qualidade do que você entrega.",
+    "sol": "Criamos uma identidade consistente para tornar sua marca reconhecível e sua proposta mais clara.",
+    "delivers": [
+      "Logotipo",
+      "Cores e tipografia",
+      "Guia da marca",
+      "Modelos para redes",
+      "Aplicações",
+      "Tom de voz"
+    ]
+  },
+  {
+    "icon": "🚀",
+    "name": "Hospedagem Gerenciada",
+    "teaser": "Deixe a parte técnica com a gente.",
+    "prob": "Problemas no servidor e falta de manutenção tiram seu foco do negócio.",
+    "sol": "Cuidamos da hospedagem, dos backups e do monitoramento para manter seu site bem atendido.",
+    "delivers": [
+      "Configuração do servidor",
+      "CDN",
+      "Certificado SSL",
+      "Backups",
+      "Monitoramento",
+      "Suporte técnico"
+    ]
+  },
+  {
+    "icon": "📊",
+    "name": "Analytics & CRO",
+    "teaser": "Entenda o que gera contatos.",
+    "prob": "Você não sabe em que ponto as pessoas desistem do seu site.",
+    "sol": "Medimos o comportamento e testamos melhorias na página para reduzir atritos na jornada.",
+    "delivers": [
+      "Analytics",
+      "Eventos de conversão",
+      "Painel de indicadores",
+      "Testes A/B",
+      "Análise de navegação",
+      "Recomendações"
+    ]
+  },
+  {
+    "icon": "🛒",
+    "name": "E-commerce",
+    "teaser": "Facilite a compra até o pagamento.",
+    "prob": "O cliente encontra o produto, mas desiste antes de finalizar.",
+    "sol": "Organizamos catálogo, carrinho e pagamento para uma experiência de compra mais simples.",
+    "delivers": [
+      "Loja virtual",
+      "Meios de pagamento",
+      "Controle de estoque",
+      "Recuperação de carrinho",
+      "Relatório de vendas",
+      "Integrações"
+    ]
+  },
+  {
+    "icon": "🔧",
+    "name": "Automação & Integrações",
+    "teaser": "Acompanhe contatos sem retrabalho.",
+    "prob": "Tarefas repetitivas consomem tempo e deixam contatos sem acompanhamento.",
+    "sol": "Conectamos seus sistemas e automatizamos as etapas mais repetitivas do atendimento.",
+    "delivers": [
+      "Configuração de CRM",
+      "Automação de e-mail",
+      "Integrações",
+      "Organização de contatos",
+      "Lembretes de retorno",
+      "Fluxos de atendimento"
+    ]
+  }
 ];
 
 const FAQS = [
-  ['Quanto tempo leva para o meu site ficar pronto?','Uma landing page de alta conversão fica pronta em 5 a 10 dias úteis. Sites institucionais completos levam de 3 a 6 semanas, dependendo da complexidade e da agilidade no envio dos materiais. Você acompanha cada etapa e sabe exatamente onde o projeto está.'],
-  ['Já contratei agência antes e não deu certo. O que muda aqui?','A diferença começa no diagnóstico e no rastreamento. Antes de qualquer investimento, mapeamos onde você perde cliente hoje e configuramos a medição de conversão. Assim toda decisão vira dado, não opinião — e você consegue cobrar resultado com número na mão.'],
-  ['Vocês fazem site para qualquer tipo de negócio?','Sim. Já atendemos clínicas, escritórios de advocacia, e-commerces, prestadores de serviço locais, indústrias e negócios digitais. O que muda é a estratégia; o processo e o padrão de qualidade são sempre os mesmos.'],
-  ['Preciso de site novo ou dá para melhorar o que eu tenho?','Depende do estado do que existe. Se a estrutura é aproveitável, reformar costuma ser mais eficiente. Se está lento, desatualizado ou com problema técnico no Google, reconstruir sai mais barato no longo prazo. Analisamos seu caso na proposta, sem custo.'],
-  ['Qual o investimento médio de um projeto?','Varia com a complexidade. Landing pages partem de valores acessíveis; sites completos com integrações e estratégia de SEO têm investimento maior. Não trabalhamos com tabela fechada — cada proposta é montada para o que o seu negócio realmente precisa.'],
-  ['Vocês também cuidam dos meus anúncios?','Sim. Gerenciamos Google Ads e Meta Ads com rastreamento completo de conversão, integrados ao site que desenvolvemos. Anúncio e página falando a mesma língua é o que faz o resultado aparecer mais rápido.'],
-  ['Meu site vai aparecer no Google depois de pronto?','Todo site que entregamos já sai com SEO técnico configurado: velocidade, estrutura, meta tags e indexação correta. Para disputar as primeiras posições em termos competitivos, recomendamos o plano de SEO contínuo, que trabalha o crescimento mês a mês.'],
-  ['Existe contrato de fidelidade?','Não. Você continua conosco porque o resultado justifica, não porque assinou uma cláusula. Domínio, contas de anúncio, analytics e código ficam no seu nome desde o primeiro dia.'],
-  ['Como começa o processo?','Você faz o diagnóstico gratuito aqui do site ou manda um e-mail. Em até 24h conversamos para entender o seu negócio e enviamos uma proposta com escopo, prazo e investimento. Sem enrolação e sem reunião interminável.']
+  [
+    "Quanto custa um projeto?",
+    "O investimento depende das páginas, do conteúdo e das integrações. Após entender seu cenário, enviamos uma proposta com entregas, prazo e valor definidos."
+  ],
+  [
+    "Em quanto tempo o site fica pronto?",
+    "Landing pages costumam levar de 5 a 10 dias úteis; sites completos, de 3 a 6 semanas. O prazo é confirmado na proposta e depende do escopo e do envio dos materiais."
+  ],
+  [
+    "Dá para melhorar meu site atual?",
+    "Sim, quando a estrutura permite. Avaliamos o que pode ser aproveitado antes de recomendar uma reconstrução."
+  ],
+  [
+    "Vocês também cuidam dos anúncios?",
+    "Sim. Trabalhamos com Google Ads e Meta Ads, conectando campanhas, páginas e medição de contatos. A verba de mídia é definida separadamente."
+  ],
+  [
+    "Vou ter acesso ao meu site e às contas?",
+    "Sim. Domínio, código e contas ficam no seu nome. As entregas e os acessos são definidos na contratação."
+  ],
+  [
+    "Existe fidelidade?",
+    "Não há fidelidade obrigatória. As condições de cada serviço e de encerramento ficam claras no contrato."
+  ],
+  [
+    "Vocês garantem vendas ou primeiro lugar no Google?",
+    "Não. Esses resultados também dependem da oferta, do mercado, do investimento e do atendimento. Nosso compromisso é entregar o escopo combinado, medir e orientar melhorias."
+  ],
+  [
+    "Já tive uma experiência ruim. Como acompanho?",
+    "Você recebe escopo e prazo por escrito, acompanha as etapas e participa das aprovações antes da publicação."
+  ],
+  [
+    "Como começamos?",
+    "Conte o que sua empresa faz e o que quer melhorar. A partir dessa conversa, definimos o próximo passo e preparamos a proposta."
+  ]
 ];
 
 /* ═══════════ RENDER STATIC LISTS ═══════════ */
 document.getElementById('mtrack').innerHTML = [...MARQUEE,...MARQUEE].map(t=>`<span class="mi"><span class="dot"></span>${t}</span>`).join('');
 
 document.getElementById('svcgrid').innerHTML = SVCS.map((s,i)=>`
-  <button class="svc-card reveal" data-svc="${i}" style="transition-delay:${i*.05}s">
+  <button class="svc-card reveal" data-svc="${i}" aria-haspopup="dialog" aria-controls="svcModal" style="transition-delay:${i*.05}s">
     <span class="svc-icon">${s.icon}</span>
     <div class="svc-name">${s.name}</div>
-    <p class="svc-teaser">${s.prob.split('.')[0]}.</p>
-    <span class="svc-open">Ver detalhes →</span>
+    <p class="svc-teaser">${s.teaser}</p>
+    <span class="svc-open">Ver solução →</span>
   </button>`).join('');
 
-document.getElementById('faqList').innerHTML = FAQS.map(([q,a])=>`
+document.getElementById('faqList').innerHTML = FAQS.map(([q,a],i)=>`
   <div class="faq-item">
-    <button class="faq-q">${q}<span class="faq-icon">+</span></button>
-    <div class="faq-a"><p>${a}</p></div>
+    <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-${i}">${q}<span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" id="faq-answer-${i}" aria-hidden="true"><p>${a}</p></div>
   </div>`).join('');
 
 document.getElementById('painList').innerHTML = PAINS.map((p,i)=>`
-  <button class="pain-item${i===0?' on':''}" data-p="${i}">
+  <button class="pain-item${i===0?' on':''}" data-p="${i}" aria-pressed="${i===0}" aria-controls="painPanel">
     <span class="pi-n">${String(i+1).padStart(2,'0')}</span>
     <span class="pi-t">${p.short}</span>
     <span class="pi-ar">→</span>
@@ -1339,7 +1663,7 @@ function paintPain(i){
     <div class="pp-who">${p.who}</div>
     <div class="pp-block why"><h4>⚠ Por que isso acontece</h4><p>${p.why}</p></div>
     <div class="pp-block fix"><h4>✓ Como a IXVOC resolve</h4><p>${p.fix}</p></div>
-    <div class="pp-tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>`;
+    <div class="pp-tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div><a class="pain-contact" href="https://wa.me/5511993223865?text=${encodeURIComponent('Olá! Quero conversar sobre este desafio: '+p.short)}" target="_blank" rel="noopener noreferrer">Conversar sobre este problema <span aria-hidden="true">→</span></a>`;
 }
 const painPanel = document.getElementById('painPanel');
 const painLayout = painPanel.parentElement;
@@ -1359,8 +1683,8 @@ document.querySelectorAll('.pain-item').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const i = +btn.dataset.p;
     const same = i === painIdx && btn.classList.contains('on');
-    document.querySelectorAll('.pain-item').forEach(b=>b.classList.remove('on'));
-    btn.classList.add('on');
+    document.querySelectorAll('.pain-item').forEach(b=>{b.classList.remove('on');b.setAttribute('aria-pressed','false');});
+    btn.classList.add('on');btn.setAttribute('aria-pressed','true');
     painIdx = i;
     placePanel(btn);
     if(same) return;
@@ -1378,17 +1702,6 @@ addEventListener('resize',()=>{
   const active = document.querySelector('.pain-item.on') || painList.querySelector('.pain-item');
   placePanel(active);
 });
-
-/* ═══════════ CURSOR ═══════════ */
-if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
-  const dot=document.getElementById('cdot'),ring=document.getElementById('cring');
-  let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
-  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
-  (function loop(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;dot.style.left=mx+'px';dot.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
-  const hoverables='a,button,.flip-card,.pain-item';
-  document.addEventListener('mouseover',e=>{if(e.target.closest(hoverables))document.body.classList.add('hov');});
-  document.addEventListener('mouseout',e=>{if(e.target.closest(hoverables))document.body.classList.remove('hov');});
-}
 
 /* ═══════════ GRID SPOTLIGHT ═══════════ */
 const gridBg=document.getElementById('grid-bg');
@@ -1417,12 +1730,15 @@ addEventListener('scroll',()=>{
 
 /* ═══════════ MOBILE MENU ═══════════ */
 const burger=document.getElementById('burger');
+const mobileMenu=document.getElementById('mobmenu');
+function syncMenu(){const open=document.body.classList.contains('menu-open');mobileMenu.inert=!open;burger.setAttribute('aria-expanded',String(open));burger.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');}
+
 burger.addEventListener('click',()=>{
   document.body.classList.toggle('menu-open');
-  document.body.style.overflow=document.body.classList.contains('menu-open')?'hidden':'';
+  document.body.style.overflow=document.body.classList.contains('menu-open')?'hidden':'';syncMenu();
 });
 document.querySelectorAll('#mobmenu a').forEach(a=>a.addEventListener('click',()=>{
-  document.body.classList.remove('menu-open');document.body.style.overflow='';
+  document.body.classList.remove('menu-open');document.body.style.overflow='';syncMenu();
 }));
 
 /* ═══════════ HERO CANVAS ═══════════ */
@@ -1502,23 +1818,26 @@ updateProcFill();
 
 /* ═══════════ SERVICE MODAL ═══════════ */
 const overlay=document.getElementById('svcModal');
+let modalTrigger=null;
 const mIcon=document.getElementById('mIcon'),mName=document.getElementById('mName'),
       mProb=document.getElementById('mProb'),mSol=document.getElementById('mSol'),
       mList=document.getElementById('mList');
 document.querySelectorAll('.svc-card').forEach(card=>{
   card.addEventListener('click',()=>{
+    modalTrigger=card;
     const d=SVCS[+card.dataset.svc];
     mIcon.textContent=d.icon;mName.textContent=d.name;
+    document.getElementById('mCTA').href='https://wa.me/5511993223865?text='+encodeURIComponent('Olá! Quero conversar sobre '+d.name+' para minha empresa.');
     mProb.textContent=d.prob;mSol.textContent=d.sol;
     mList.innerHTML=d.delivers.map(x=>`<li>${x}</li>`).join('');
-    overlay.classList.add('open');document.body.style.overflow='hidden';
+    overlay.inert=false;overlay.classList.add('open');document.body.style.overflow='hidden';document.getElementById('mClose').focus({preventScroll:true});
   });
 });
-function closeModal(){overlay.classList.remove('open');document.body.style.overflow='';}
+function closeModal(){const wasOpen=overlay.classList.contains('open');overlay.classList.remove('open');overlay.inert=true;document.body.style.overflow='';if(wasOpen)modalTrigger?.focus({preventScroll:true});}
 document.getElementById('mClose').addEventListener('click',closeModal);
 document.getElementById('mCTA').addEventListener('click',closeModal);
 overlay.addEventListener('click',e=>{if(e.target===overlay)closeModal();});
-addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();document.body.classList.remove('menu-open');document.body.style.overflow='';}});
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();document.body.classList.remove('menu-open');document.body.style.overflow='';syncMenu();}});
 
 /* ═══════════ FAQ ═══════════ */
 document.querySelectorAll('.faq-q').forEach(btn=>{
@@ -1526,7 +1845,9 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
     const ans=btn.nextElementSibling,open=btn.classList.contains('open');
     document.querySelectorAll('.faq-q').forEach(b=>b.classList.remove('open'));
     document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'));
-    if(!open){btn.classList.add('open');ans.classList.add('open');}
+    document.querySelectorAll('.faq-q').forEach(b=>b.setAttribute('aria-expanded','false'));
+    document.querySelectorAll('.faq-a').forEach(a=>a.setAttribute('aria-hidden','true'));
+    if(!open){btn.classList.add('open');ans.classList.add('open');btn.setAttribute('aria-expanded','true');ans.setAttribute('aria-hidden','false');}
   });
 });
 
@@ -1562,11 +1883,12 @@ function fillQ(q){
   q.opts.forEach((o,i)=>{
     const b=document.createElement('button');
     b.className='q-opt'+(answers[qIdx]===i?' sel':'');
+    b.setAttribute('aria-pressed',String(answers[qIdx]===i));
     b.innerHTML=`<span class="opt-icon">${o.icon}</span><span class="opt-label">${o.label}</span><span class="opt-check"></span>`;
     b.addEventListener('click',()=>{
       answers[qIdx]=i;
-      qOpts.querySelectorAll('.q-opt').forEach(x=>x.classList.remove('sel'));
-      b.classList.add('sel');updateNext();
+      qOpts.querySelectorAll('.q-opt').forEach(x=>{x.classList.remove('sel');x.setAttribute('aria-pressed','false');});
+      b.classList.add('sel');b.setAttribute('aria-pressed','true');updateNext();
     });
     qOpts.appendChild(b);
   });
@@ -1587,6 +1909,7 @@ function renderQ(dir){
 }
 function updateNext(){
   qNext.classList.toggle('ready',answers[qIdx]!==null);
+  qNext.disabled=answers[qIdx]===null;
   qNext.textContent=qIdx===QUESTIONS.length-1?'Ver resultado →':'Próxima →';
 }
 renderQ(0);
@@ -1611,27 +1934,26 @@ function calcScore(){
   return Math.min(Math.max(Math.round(s),15),88);
 }
 function getGargalo(){
-  const site=answers[0],ads=answers[3],budget=answers[4],pain=answers[5],channel=answers[6];
-  if(site===0)return{icon:'🚫',title:'Você não existe no mundo digital',desc:'Sem site, você depende 100% de indicação. Enquanto o concorrente capta clientes 24h por dia pelo Google e pelas redes, você é invisível para quem está procurando exatamente o que você oferece.'};
-  if(site===1&&(ads===0||ads===1))return{icon:'⛔',title:'Site fraco somado a zero tráfego',desc:'Seu site atual afasta em vez de atrair, e sem investimento em tráfego mesmo quem te encontra não converte. É um gargalo duplo — e resolver só um dos lados não muda o resultado.'};
-  if(pain===0&&(ads===0||budget===0))return{icon:'📉',title:'Tráfego qualificado inexistente',desc:'O seu problema central é que quase ninguém chega até você — ou quem chega não está buscando o que você vende. Sem uma estratégia de aquisição consistente, crescer virou questão de sorte.'};
-  if(pain===1)return{icon:'🕳️',title:'Site sem estratégia de conversão',desc:'Você tem visita mas perde o visitante. Falta jornada clara, gatilho no lugar certo e copy que responda às objeções antes delas surgirem. O tráfego que você já paga está sendo desperdiçado.'};
-  if(pain===2)return{icon:'🔍',title:'Ausência de presença orgânica no Google',desc:'Seus clientes pesquisam o que você oferece todos os dias — e encontram o concorrente. Sem SEO técnico e conteúdo estratégico, você paga caro por cada visita enquanto o outro aparece de graça.'};
-  if(pain===3)return{icon:'🪞',title:'Identidade de marca que afasta',desc:'Antes de ler uma linha do seu site, o cliente já formou uma opinião pela sua identidade visual. Se essa impressão não é de profissionalismo e autoridade, você perde a venda antes da conversa começar.'};
-  if(pain===4||channel===4)return{icon:'📊',title:'Falta total de dados e rastreamento',desc:'Você decide no escuro. Sem analytics e rastreamento de conversão é impossível saber o que funciona — e você segue pagando por estratégias que talvez não estejam gerando nada.'};
-  return{icon:'⚡',title:'Potencial desperdiçado por falta de integração',desc:'Você tem peças funcionando, mas elas não conversam entre si. Site, anúncio, rede social e processo de venda precisam ser uma máquina única — não partes soltas competindo entre si.'};
+  const site=answers[0],pain=answers[5];
+  if(site===0)return{icon:'⚡',title:'Criar uma base própria para sua oferta',desc:'Um site pode reunir seus diferenciais e facilitar o contato. O próximo passo é definir a oferta e como as pessoas vão chegar até ela.'};
+  if(site===1)return{icon:'⚡',title:'Melhorar a experiência do seu site',desc:'Vale revisar velocidade, leitura no celular e caminho até o contato antes de ampliar o investimento em divulgação.'};
+  if(pain===0)return{icon:'📡',title:'Ampliar a chegada de novos contatos',desc:'Revise seus canais de aquisição, a oferta e o público. A combinação ideal depende do mercado e do orçamento.'};
+  if(pain===1)return{icon:'📊',title:'Revisar a jornada até a venda',desc:'Página, oferta e atendimento podem influenciar a decisão. Precisamos identificar onde os contatos deixam de avançar.'};
+  if(pain===2)return{icon:'🔍',title:'Melhorar a presença nas buscas',desc:'Uma análise de indexação, conteúdo e concorrência ajuda a definir prioridades para aparecer no Google.'};
+  if(pain===3)return{icon:'🎯',title:'Apresentar seu valor com mais clareza',desc:'Sua identidade, mensagem e provas reais precisam mostrar por que o cliente deve escolher você.'};
+  return{icon:'📊',title:'Entender o que gera oportunidades',desc:'Comece pela medição dos contatos e de sua origem. Esses dados ajudam a orientar os próximos investimentos.'};
 }
 function getOpps(){
   const site=answers[0],ads=answers[3],pain=answers[5],ticket=answers[7];
   const all=[
-    {tag:'Alta prioridade',txt:'Site ou landing page estratégica para captar oportunidades 24/7 sem depender de indicação.'},
-    {tag:'Ganho rápido',txt:'Tráfego pago cirúrgico: cada real investido com rastreamento de retorno real.'},
-    {tag:'Longo prazo',txt:'SEO técnico para aparecer organicamente quando o cliente pesquisa — sem pagar por clique.'},
-    {tag:'Confiança',txt:'Identidade visual profissional que comunica autoridade antes de qualquer conversa.'},
-    {tag:'Conversão',txt:'Otimização de CRO: converter mais com o tráfego que você já tem, sem gastar mais.'},
-    {tag:'Escalabilidade',txt:'Automação de follow-up para não perder quem não comprou na primeira interação.'},
-    {tag:'Inteligência',txt:'Painel de analytics: saiba de onde vêm seus clientes e quanto cada canal realmente rende.'},
-    {tag:'Recorrência',txt:'E-mail e automação para aumentar o valor dos clientes que você já conquistou.'}
+    {tag:'Alta prioridade',txt:'Site com oferta clara e caminho direto até o contato.'},
+    {tag:'Ganho rápido',txt:'Campanhas conectadas à medição dos contatos gerados.'},
+    {tag:'Longo prazo',txt:'Revisão técnica e de conteúdo para melhorar sua presença nas buscas.'},
+    {tag:'Confiança',txt:'Identidade consistente para comunicar seus diferenciais.'},
+    {tag:'Conversão',txt:'Testes na página para reduzir atritos até o contato.'},
+    {tag:'Escalabilidade',txt:'Lembretes e acompanhamento dos contatos recebidos.'},
+    {tag:'Inteligência',txt:'Painel para acompanhar origem e custo dos contatos.'},
+    {tag:'Recorrência',txt:'Comunicação com clientes para manter o relacionamento.'}
   ];
   const picks=[];
   if(site===0||site===1)picks.push(all[0]);
@@ -1657,15 +1979,17 @@ function getRecs(){
   return recs.slice(0,4);
 }
 function getTitleSub(score){
-  if(score<35)return{title:'Sua presença digital está em estado crítico.',sub:'A boa notícia é que o potencial de ganho é enorme. Com os movimentos certos, os primeiros resultados aparecem em poucas semanas.'};
-  if(score<55)return{title:'Você tem base, mas está perdendo muito.',sub:'Existem brechas claras na sua estratégia digital que custam clientes todo dia. São gargalos identificáveis — e resolvíveis.'};
-  if(score<72)return{title:'Está no caminho certo, mas incompleto.',sub:'Algumas peças funcionam bem, mas falta integração e otimização. Com ajustes cirúrgicos, seu resultado pode saltar sem aumentar investimento.'};
-  return{title:'Boa base. Agora é hora de escalar.',sub:'Você já tem estrutura digital rodando. O próximo passo é otimizar cada ponto de contato para extrair mais do que já existe.'};
+  if(score<35)return{title:'Comece por uma base clara.',sub:'Suas respostas sugerem priorizar presença digital e medição de contatos.'};
+  if(score<55)return{title:'Conecte melhor o que já existe.',sub:'Vale revisar como os canais de divulgação levam as pessoas até o contato.'};
+  if(score<72)return{title:'Identifique os pontos de atrito.',sub:'Sua estrutura pode se beneficiar de uma revisão da jornada e dos indicadores.'};
+  return{title:'Use os dados para definir o próximo passo.',sub:'Suas respostas indicam uma base ativa. Uma análise detalhada ajuda a priorizar melhorias.'};
 }
 function showResult(){
   diagQuiz.hidden=true;diagResult.hidden=false;
   setTimeout(()=>diagResult.scrollIntoView({behavior:'smooth',block:'start'}),80);
   const score=calcScore(),garg=getGargalo(),opps=getOpps(),recs=getRecs(),{title,sub}=getTitleSub(score);
+  const summary=QUESTIONS.map((q,i)=>q.title+' '+q.opts[answers[i]].label).join('\n');
+  document.getElementById('diagContact').href='https://wa.me/5511993223865?text='+encodeURIComponent('Olá! Fiz a orientação inicial da IXVOC e quero conversar.\n\n'+summary+'\n\nPrioridade sugerida: '+garg.title);
   document.getElementById('resTitle').textContent=title;
   document.getElementById('resSub').textContent=sub;
   const arc=document.getElementById('gaugeArc'),pctEl=document.getElementById('gaugePct'),circ=2*Math.PI*50;
@@ -1678,6 +2002,22 @@ function showResult(){
   document.getElementById('resOpps').innerHTML=opps.map(o=>`<div class="opp-card"><div class="opp-tag">${o.tag}</div><p>${o.txt}</p></div>`).join('');
   document.getElementById('resRecs').innerHTML=recs.map(r=>`<div class="rec-item"><span>${r.i}</span><span>${r.n}</span></div>`).join('');
 }
+
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Tab')return;
+  const scope=overlay.classList.contains('open')?overlay:(document.body.classList.contains('menu-open')?mobileMenu:null);
+  if(!scope)return;
+  const items=[...scope.querySelectorAll('a[href],button:not(:disabled)')];
+  if(scope===mobileMenu)items.unshift(burger);
+  const first=items[0],last=items[items.length-1];
+  if(e.shiftKey&&(document.activeElement===first||!items.includes(document.activeElement))){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&(document.activeElement===last||!items.includes(document.activeElement))){e.preventDefault();first.focus();}
+});
+addEventListener('resize',()=>{
+  if(innerWidth>960&&document.body.classList.contains('menu-open')){
+    document.body.classList.remove('menu-open');document.body.style.overflow='';syncMenu();
+  }
+});
 </script>
 </body>
 </html>
