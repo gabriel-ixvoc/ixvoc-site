@@ -1022,7 +1022,7 @@ section{scroll-margin-top:84px;}
 #problem .flip-front,#problem .flip-back{position:relative;inset:auto;grid-area:1 / 1;height:auto;min-height:0;}
 
 /* ─── CASES / PORTFOLIO ─── */
-#cases{padding:96px 0;}
+#cases{padding:96px var(--pad);}
 #cases .head-c{text-align:center;margin-bottom:52px;}
 #cases .cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px;margin:0 auto;}
 .case-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 28px 24px;display:flex;flex-direction:column;gap:16px;transition:border-color .22s,transform .22s;}
@@ -1107,7 +1107,14 @@ section{scroll-margin-top:84px;}
 @keyframes spin{to{transform:rotate(360deg);}}
 @media(max-width:680px){
   #cases .cases-grid{grid-template-columns:1fr;}
-  .pm-body{padding:14px 10px;}
+  #previewModal{padding:10px;}
+  .pm-sheet{max-height:96vh;}
+  .pm-body{padding:10px 8px;}
+  .pm-device-wrap.is-phone{
+    /* fill almost all popup width; derive portrait height from width */
+    width:calc(100vw - 56px);
+    --ph:clamp(420px,calc((100vw - 72px) / 0.4622),640px);
+  }
   .pm-device-wrap.is-desktop{width:calc(100vw - 28px);}
   .pm-device-wrap.is-desktop .pm-screen{height:min(calc(92vh - 110px),calc((100vw - 28px) * 0.625));}
 }
