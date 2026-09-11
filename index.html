@@ -1040,7 +1040,7 @@ section{scroll-margin-top:84px;}
 .case-btn{display:inline-flex;align-items:center;gap:6px;font-size:.8125rem;font-weight:600;color:var(--neon);background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.2);border-radius:6px;padding:8px 14px;cursor:pointer;transition:background .18s,border-color .18s;line-height:1;width:fit-content;}
 .case-btn:hover{background:rgba(0,200,255,.15);border-color:rgba(0,200,255,.38);}
 /* ─── PREVIEW MODAL ─── */
-#previewModal{position:fixed;inset:0;z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .28s;}
+#previewModal{position:fixed;inset:0;z-index:9100;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .28s;}
 #previewModal.pm-open{opacity:1;pointer-events:auto;}
 .pm-sheet{background:var(--surface);border:1px solid var(--border2);border-radius:16px;display:flex;flex-direction:column;width:100%;max-width:min(1400px,calc(100vw - 40px));max-height:92vh;overflow:hidden;}
 .pm-header{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--border);flex-shrink:0;}
@@ -1699,6 +1699,8 @@ section{scroll-margin-top:84px;}
   </div>
 </section>
 
+</main>
+
 <!-- ═══ PREVIEW MODAL ═══ -->
 <div id="previewModal" inert role="dialog" aria-modal="true" aria-labelledby="pmTitle">
   <div class="pm-sheet">
@@ -1733,7 +1735,6 @@ section{scroll-margin-top:84px;}
     </div>
   </div>
 </div>
-</main>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
