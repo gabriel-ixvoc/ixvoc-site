@@ -1042,7 +1042,7 @@ section{scroll-margin-top:84px;}
 /* ─── PREVIEW MODAL ─── */
 #previewModal{position:fixed;inset:0;z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .28s;}
 #previewModal.pm-open{opacity:1;pointer-events:auto;}
-.pm-sheet{background:var(--surface);border:1px solid var(--border2);border-radius:16px;display:flex;flex-direction:column;width:100%;max-width:960px;max-height:92vh;overflow:hidden;}
+.pm-sheet{background:var(--surface);border:1px solid var(--border2);border-radius:16px;display:flex;flex-direction:column;width:100%;max-width:min(1400px,calc(100vw - 40px));max-height:92vh;overflow:hidden;}
 .pm-header{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--border);flex-shrink:0;}
 .pm-header h3{font-size:.9375rem;font-weight:600;color:var(--white);flex:1;margin:0;}
 .pm-toggle{display:flex;gap:6px;margin-right:4px;}
@@ -1052,7 +1052,7 @@ section{scroll-margin-top:84px;}
 .pm-ext:hover{color:var(--white);border-color:var(--border2);}
 .pm-close{background:none;border:none;padding:6px;color:var(--muted);cursor:pointer;line-height:0;border-radius:4px;flex-shrink:0;}
 .pm-close:hover{color:var(--white);}
-.pm-body{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;padding:28px;}
+.pm-body{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;padding:20px 24px;}
 .pm-device-wrap{position:relative;display:flex;flex-direction:column;}
 
 /* ── PHONE: iPhone 12 Pro Max (428×926) — altura calculada para caber no modal ── */
@@ -1077,7 +1077,7 @@ section{scroll-margin-top:84px;}
 
 /* ── DESKTOP: MacBook 13" (16:10) ── */
 .pm-device-wrap.is-desktop{
-  width:min(860px,calc(100vw - 48px));
+  width:min(1340px,calc(100vw - 88px));
   background:#1a1d20;
   border-radius:10px;
   border:1px solid rgba(255,255,255,.12);
@@ -1094,7 +1094,7 @@ section{scroll-margin-top:84px;}
 .pm-device-wrap.is-desktop .pm-phone-deco{display:none;}
 .pm-device-wrap.is-desktop .pm-phone-home{display:none;}
 /* 16:10: height = width × 0.625 */
-.pm-device-wrap.is-desktop .pm-screen{height:min(538px,calc(min(860px,100vw - 48px) * 0.625));overflow:hidden;position:relative;}
+.pm-device-wrap.is-desktop .pm-screen{height:min(calc(92vh - 110px),calc(min(1340px,100vw - 88px) * 0.625));overflow:hidden;position:relative;}
 .pm-device-wrap.is-desktop .pm-screen iframe{width:100%;height:100%;border:none;}
 
 .pm-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(9,11,13,.85);border-radius:inherit;transition:opacity .2s;}
@@ -1109,6 +1109,7 @@ section{scroll-margin-top:84px;}
   #cases .cases-grid{grid-template-columns:1fr;}
   .pm-body{padding:14px 10px;}
   .pm-device-wrap.is-desktop{width:calc(100vw - 28px);}
+  .pm-device-wrap.is-desktop .pm-screen{height:min(calc(92vh - 110px),calc((100vw - 28px) * 0.625));}
 }
 
 /* ── NAV LOGO SIGMA ── */
