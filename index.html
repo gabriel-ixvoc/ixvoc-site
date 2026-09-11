@@ -263,6 +263,7 @@ section{padding:clamp(72px,10vw,130px) var(--pad);position:relative;}
 
 /* ═══ FLIP CARDS ═══ */
 #problem{background:var(--bg2);}
+.flip-mobile-hint{display:none;}
 .flip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 .flip-wrap{perspective:1400px;}
 .flip-card{position:relative;width:100%;height:330px;transform-style:preserve-3d;transition:transform .8s var(--ease);}
@@ -508,11 +509,10 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   .svc-grid{grid-template-columns:repeat(3,1fr);}
 }
 @media(max-width:960px){
-  /* nav: burger left, wordmark right */
-  nav{justify-content:flex-start;gap:14px;}
+  /* nav: logo left, burger right */
+  nav{justify-content:space-between;gap:14px;}
   .nl,.nc{display:none;}
-  .nburger{display:flex;order:-1;}
-  .nm{margin-left:auto;}
+  .nburger{display:flex;}
   #mobmenu{align-items:flex-start;justify-content:center;padding:90px var(--pad) 40px;gap:2px;}
   #mobmenu a{width:100%;text-align:left;padding:14px 0;font-size:1.35rem;border-bottom:1px solid var(--border);}
   #mobmenu .mm-cta{width:auto;align-self:flex-start;margin-top:26px;border-bottom:none;padding:15px 30px;text-align:center;}
@@ -586,12 +586,17 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:60px
   .modal-body{padding:22px;gap:16px;}
   .modal-cta{padding:0 22px 26px;}
 
-  /* flip cards stack, no 3D on touch */
+  /* flip cards: collapsed by default, expand on tap */
   .flip-card{height:auto;transform:none!important;}
   .flip-front,.flip-back{position:relative;inset:auto;transform:none;backface-visibility:visible;-webkit-backface-visibility:visible;padding:28px 24px;}
-  .flip-back{margin-top:10px;}
+  .flip-back{display:none;margin-top:0;}
+  .flip-card.flipped .flip-back{display:flex;}
+  .flip-card.flipped .flip-front{display:none;}
   .flip-icon{margin-bottom:14px;}
   .flip-hint{display:none;}
+  .flip-mobile-hint{display:block;font-size:.75rem;color:var(--neon);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-top:6px;opacity:.8;}
+  /* remove the ::after tip since we now have explicit text */
+  #problem .flip-front::after{display:none;}
 
   .res-top{grid-template-columns:1fr;text-align:center;}
   .res-summary{text-align:center;}
@@ -1226,7 +1231,7 @@ section{scroll-margin-top:84px;}
       <span>Sem contrato de fidelidade</span>
     </div>
   </div>
-  <div class="hscroll"><span>role</span><div class="hscroll-line"></div></div>
+  <div class="hscroll"><div class="hscroll-line"></div></div>
 </section>
 
 <!-- ═══ MARQUEE ═══ -->
@@ -1265,6 +1270,7 @@ section{scroll-margin-top:84px;}
       <span class="stag stag-red">O diagnóstico honesto</span>
       <h2 class="stitle">Todo problema merece <br><span class="hl">uma solução clara.</span></h2>
       <p class="ssub">Três pontos que podem separar uma visita de um novo cliente.</p>
+      <p class="flip-mobile-hint">Toque nos cards para ver a solução ↻</p>
     </div>
     <div class="flip-grid">
       <div class="flip-wrap reveal">
