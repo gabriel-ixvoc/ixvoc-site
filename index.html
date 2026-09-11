@@ -1027,7 +1027,9 @@ section{scroll-margin-top:84px;}
 #cases .cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px;margin:0 auto;}
 .case-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 28px 24px;display:flex;flex-direction:column;gap:16px;transition:border-color .22s,transform .22s;}
 .case-card:hover{border-color:var(--border2);transform:translateY(-3px);}
-.case-icon{font-size:1.8rem;line-height:1;}
+.case-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;}
+.case-icon img{width:44px;height:44px;object-fit:contain;border-radius:8px;}
+.case-icon .case-icon-fb{font-size:1.8rem;line-height:1;display:none;}
 .case-quote{font-size:.9875rem;line-height:1.6;color:var(--soft);flex:1;}
 .case-quote::before{content:'\201C';}
 .case-quote::after{content:'\201D';}
@@ -1056,11 +1058,13 @@ section{scroll-margin-top:84px;}
 .pm-device-wrap.is-phone .pm-phone-deco{display:flex;justify-content:center;padding:10px 0 6px;flex-shrink:0;}
 .pm-device-wrap.is-phone .pm-phone-notch{width:90px;height:26px;background:#0a0c0e;border-radius:0 0 18px 18px;}
 .pm-device-wrap.is-phone .pm-desktop-deco{display:none;}
-.pm-device-wrap.is-phone .pm-screen{flex:1;border-radius:0;overflow:hidden;height:560px;}
+/* Phone: iPhone 12 Pro Max ratio (428×926) — scale to 340px wide → ~735px tall shell */
+.pm-device-wrap.is-phone .pm-screen{flex:1;border-radius:0;overflow:hidden;height:668px;}
 .pm-device-wrap.is-phone .pm-screen iframe{width:100%;height:100%;border:none;}
-.pm-device-wrap.is-phone .pm-phone-home{display:flex;justify-content:center;padding:8px 0 10px;flex-shrink:0;}
-.pm-device-wrap.is-phone .pm-phone-bar{width:100px;height:4px;background:rgba(255,255,255,.28);border-radius:2px;}
+.pm-device-wrap.is-phone .pm-phone-home{display:flex;justify-content:center;padding:10px 0 14px;flex-shrink:0;}
+.pm-device-wrap.is-phone .pm-phone-bar{width:100px;height:5px;background:rgba(255,255,255,.32);border-radius:3px;}
 .pm-device-wrap.is-phone .pm-desktop-bar{display:none;}
+/* Desktop: MacBook 13" ratio (16:10) */
 .pm-device-wrap.is-desktop{width:min(880px,calc(100vw - 56px));background:#181c1f;border-radius:12px;border:1px solid rgba(255,255,255,.1);box-shadow:0 32px 80px rgba(0,0,0,.6);}
 .pm-device-wrap.is-desktop .pm-desktop-deco{display:flex;align-items:center;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0;}
 .pm-device-wrap.is-desktop .pm-desktop-dots{display:flex;gap:5px;margin-right:12px;}
@@ -1071,7 +1075,8 @@ section{scroll-margin-top:84px;}
 .pm-device-wrap.is-desktop .pm-desktop-urlbar{flex:1;background:rgba(255,255,255,.07);border-radius:5px;padding:4px 10px;font-size:.72rem;color:var(--muted);font-family:monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .pm-device-wrap.is-desktop .pm-phone-deco{display:none;}
 .pm-device-wrap.is-desktop .pm-phone-home{display:none;}
-.pm-device-wrap.is-desktop .pm-screen{height:520px;border-radius:0 0 12px 12px;overflow:hidden;}
+/* 16:10 → height = width × 0.625; capped at 550px */
+.pm-device-wrap.is-desktop .pm-screen{height:min(550px,calc((min(880px,100vw - 56px)) * 0.625));border-radius:0 0 12px 12px;overflow:hidden;}
 .pm-device-wrap.is-desktop .pm-screen iframe{width:100%;height:100%;border:none;}
 .pm-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(9,11,13,.85);border-radius:inherit;transition:opacity .2s;}
 .pm-loading.hidden{opacity:0;pointer-events:none;}
@@ -2220,7 +2225,11 @@ const CASES=[
 ];
 document.getElementById('casesGrid').innerHTML=CASES.map((c,i)=>`
   <div class="case-card reveal" style="transition-delay:${i*.1}s">
-    <div class="case-icon">${c.icon}</div>
+    <div class="case-icon">
+      <img src="https://logo.clearbit.com/${c.domain}" alt="${c.name}" loading="lazy"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="case-icon-fb">${c.icon}</span>
+    </div>
     <p class="case-quote">${c.quote}</p>
     <div class="case-footer">
       <div class="case-client">
