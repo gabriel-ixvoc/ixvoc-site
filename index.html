@@ -2233,6 +2233,8 @@ document.getElementById('casesGrid').innerHTML=CASES.map((c,i)=>`
       </button>
     </div>
   </div>`).join('');
+/* observe newly created cards (ro is defined earlier, cards are created after) */
+document.querySelectorAll('#casesGrid .reveal').forEach(el=>ro.observe(el));
 
 const pmModal=document.getElementById('previewModal');
 const pmIframe=document.getElementById('pmIframe');
