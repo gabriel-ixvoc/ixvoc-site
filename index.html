@@ -67,7 +67,7 @@ main,nav,footer{position:relative;z-index:2;}
 /* ═══ NAV ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:800;display:flex;align-items:center;justify-content:space-between;padding:22px var(--pad);transition:padding .4s var(--ease),background .4s,border-color .4s;border-bottom:1px solid transparent;}
 nav.scrolled{background:rgba(6,8,15,.82);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);padding:13px var(--pad);border-bottom-color:var(--border);}
-.nm{font-family:'Syne',sans-serif;font-weight:800;font-size:1.28rem;letter-spacing:0;color:var(--white);text-decoration:none;display:inline-block;white-space:nowrap;line-height:1;}
+.nm,.nm:visited,.nm:hover,.nm:focus{font-family:'Syne',sans-serif;font-weight:800;font-size:1.28rem;letter-spacing:0;color:var(--white);text-decoration:none;display:inline-block;white-space:nowrap;line-height:1;}
 .nm-dot{display:inline-block;vertical-align:middle;width:6px;height:6px;border-radius:50%;background:var(--neon);box-shadow:0 0 10px var(--neon);animation:blip 2.6s infinite;margin-right:10px;position:relative;top:-.08em;}
 @keyframes blip{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
 .sigma{font-size:1.29em;font-weight:700;line-height:0;letter-spacing:-.02em;text-transform:lowercase;}
@@ -1143,7 +1143,7 @@ section{scroll-margin-top:84px;}
 
 <!-- ═══ NAV ═══ -->
 <nav id="nb">
-  <a href="#hero" class="nm"><span class="nm-dot"></span>IXVOC<span class="sigma">ς</span></a>
+  <a href="#hero" class="nm"><span class="nm-dot"></span>IXVO<span class="sigma">ς</span></a>
   <ul class="nl">
     <li><a href="#pains">Desafios</a></li>
     <li><a href="#services">Soluções</a></li>
