@@ -2104,7 +2104,7 @@ document.querySelectorAll('#problem .flip-card').forEach(card=>{
     back.setAttribute('aria-hidden',String(!on));
   };
   card.parentElement.addEventListener('pointerenter',e=>{
-    if(e.pointerType==='mouse'&&matchMedia('(hover:hover)').matches()){hoverActive=true;flip(true);}
+    if(e.pointerType==='mouse'&&matchMedia('(hover:hover)').matches){hoverActive=true;flip(true);}
   });
   card.parentElement.addEventListener('pointerleave',e=>{
     if(e.pointerType==='mouse'){hoverActive=false;flip(false);}
