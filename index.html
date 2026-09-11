@@ -880,12 +880,7 @@ section{scroll-margin-top:84px;}
 #services .svc-teaser{margin-bottom:20px;}
 #services .svc-open{margin-top:auto;}
 #services .svc-icon{margin-bottom:22px;}
-#promise .prom-card{border:0;border-top:1px solid var(--border2);border-radius:0;padding:28px 18px 20px 0;background:none;}
-#promise .prom-card:hover{transform:none;}
-#promise .prom-card h3{max-width:28ch;}
-#promise .prom-ic{background:none;border:0;justify-content:flex-start;width:auto;height:32px;margin-bottom:18px;}
-#promise .prom-card::after{display:none;}
-#promise .prom-grid{column-gap:32px;row-gap:12px;}
+#promise .prom-grid{gap:14px;}
 #faq .container{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:64px;align-items:start;}
 #faq .head-c{margin:0;max-width:none;text-align:left;position:sticky;top:110px;}
 #faq .head-c .stag{justify-content:flex-start;}
@@ -1254,8 +1249,8 @@ section{scroll-margin-top:84px;}
       <div class="proc-step left">
         <div class="ps-body">
           <div class="ps-tag">⚠ Você não sabe onde está perdendo</div>
-          <div class="ps-name">Entender seu negócio</div>
-          <p class="ps-desc">Mapeamos onde você perde cliente e qual caminho precisa existir.</p>
+          <div class="ps-name">Diagnóstico do negócio</div>
+          <p class="ps-desc">Mapeamos onde você perde cliente, qual canal faz sentido e o que o seu digital precisa ter para funcionar.</p>
         </div>
         <div class="ps-num">01</div>
         <div class="ps-empty"></div>
@@ -1266,16 +1261,16 @@ section{scroll-margin-top:84px;}
         <div class="ps-num">02</div>
         <div class="ps-body">
           <div class="ps-tag">⚠ Sites nascem sem plano</div>
-          <div class="ps-name">Organizar a mensagem</div>
-          <p class="ps-desc">Definimos o que dizer e como levar o visitante até o contato.</p>
+          <div class="ps-name">Mensagem e estrutura</div>
+          <p class="ps-desc">Definimos o que dizer, como organizar o conteúdo e o caminho direto até o contato — antes de escrever uma linha de código.</p>
         </div>
       </div>
 
       <div class="proc-step left">
         <div class="ps-body">
-          <div class="ps-tag">⚠ Aparência que afasta</div>
-          <div class="ps-name">Dar forma à sua marca</div>
-          <p class="ps-desc">Visual forte, legível e pensado para conversão.</p>
+          <div class="ps-tag">⚠ Visual que não representa</div>
+          <div class="ps-name">Design e identidade</div>
+          <p class="ps-desc">Visual forte, legível e pensado para o seu mercado. Do logotipo à página, tudo alinhado à sua proposta.</p>
         </div>
         <div class="ps-num">03</div>
         <div class="ps-empty"></div>
@@ -1285,19 +1280,39 @@ section{scroll-margin-top:84px;}
         <div class="ps-empty"></div>
         <div class="ps-num">04</div>
         <div class="ps-body">
-          <div class="ps-tag sol">✓ Performance sem desculpa</div>
-          <div class="ps-name">Construir e testar</div>
-          <p class="ps-desc">Site rápido, responsivo e pronto para medir conversões.</p>
+          <div class="ps-tag">⚠ Domínio, e-mail e hospedagem no escuro</div>
+          <div class="ps-name">Infraestrutura e configurações</div>
+          <p class="ps-desc">Domínio, hospedagem, SSL, DNS e e-mail profissional configurados do zero. Tudo registrado no seu nome, com acesso 100% seu.</p>
+        </div>
+      </div>
+
+      <div class="proc-step left">
+        <div class="ps-body">
+          <div class="ps-tag sol">✓ Dado antes de investimento</div>
+          <div class="ps-name">Rastreamento e medição</div>
+          <p class="ps-desc">Google Tag Manager, GA4, Pixel do Meta e conversões do Google Ads configurados antes de qualquer anúncio entrar no ar.</p>
+        </div>
+        <div class="ps-num">05</div>
+        <div class="ps-empty"></div>
+      </div>
+
+      <div class="proc-step right">
+        <div class="ps-empty"></div>
+        <div class="ps-num">06</div>
+        <div class="ps-body">
+          <div class="ps-tag sol">✓ Presença que atrai</div>
+          <div class="ps-name">Publicar e anunciar</div>
+          <p class="ps-desc">Lançamos o site e as campanhas no Google Ads e Meta Ads — conectadas às conversões configuradas e ao perfil do seu cliente ideal.</p>
         </div>
       </div>
 
       <div class="proc-step left">
         <div class="ps-body">
           <div class="ps-tag sol">✓ Não acaba aqui</div>
-          <div class="ps-name">Publicar e melhorar</div>
-          <p class="ps-desc">Publicamos, medimos e ajustamos com dados reais.</p>
+          <div class="ps-name">Relatórios, otimização e manutenção</div>
+          <p class="ps-desc">Acompanhamento com origem dos contatos, custo por lead e ajustes contínuos nas campanhas. Novas páginas, testes e expansão conforme seu negócio cresce.</p>
         </div>
-        <div class="ps-num">05</div>
+        <div class="ps-num">07</div>
         <div class="ps-empty"></div>
       </div>
 
@@ -1353,19 +1368,20 @@ section{scroll-margin-top:84px;}
   <div class="container">
     <div class="about-grid founder-grid">
       <figure class="founder-photo reveal">
-        <img src="assets/gabriel-sarzi.jpeg" alt="Gabriel Sarzi, engenheiro de materiais e fundador da IXVOC" width="892" height="882" loading="lazy" decoding="async">
+        <img src="assets/gabriel-sarzi.jpeg" alt="Gabriel Sarzi, fundador da IXVOC — gestor de tráfego, desenvolvedor web e estrategista de marca" width="892" height="882" loading="lazy" decoding="async">
         <figcaption><span>Gabriel Sarzi</span><span>Fundador da IXVOC</span></figcaption>
       </figure>
       <div class="at reveal">
         <span class="stag">Quem está por trás da IXVOC</span>
-        <h2 class="stitle">Engenharia na análise. <br>Marketing na estratégia.</h2>
+        <h2 class="stitle">Engenharia na análise. <br>Marketing na execução.</h2>
         <p class="founder-intro">Prazer, sou <strong>Gabriel Sarzi.</strong></p>
-        <p>Minha formação une o rigor da engenharia à visão de marca e crescimento. É essa combinação que levo para cada projeto da IXVOC.</p>
+        <p>Gestor de tráfego, desenvolvedor web e estrategista de marca — com anos de experiência construindo campanhas reais no Google Ads e Meta Ads, criando sites do zero e entregando resultados para empresas que dependem do digital para crescer.</p>
+        <p>Criei a IXVOC para reunir em um lugar só o que um negócio precisa: site com mensagem clara, anúncios conectados à medição e estratégia alinhada ao que o seu mercado exige. Sem pacote genérico. Sem sumiço depois do lançamento.</p>
         <dl class="founder-credentials">
           <div><dt>USP</dt><dd><span>Graduação</span>Engenharia de Materiais</dd></div>
           <div><dt>PUCRS</dt><dd><span>MBA</span>Marketing, Branding e Growth</dd></div>
         </dl>
-        <p class="founder-principle">Entender seu negócio.<br><strong>Dar clareza ao seu valor.</strong></p>
+        <p class="founder-principle">Entender onde você perde cliente.<br><strong>Criar o caminho para você ganhar mais.</strong></p>
         <a class="founder-contact" href="https://wa.me/5511993223865?text=Ol%C3%A1%2C%20Gabriel!%20Quero%20conversar%20sobre%20um%20projeto%20com%20a%20IXVOC." target="_blank" rel="noopener noreferrer">Conversar com Gabriel <span aria-hidden="true">↗</span></a>
       </div>
     </div>
