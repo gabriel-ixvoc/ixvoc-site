@@ -1966,12 +1966,20 @@ const SVCS=[
     mList.innerHTML=d.delivers.map(x=>`<li>${x}</li>`).join('');
     mCTA.href='https://wa.me/5511993223865?text='+encodeURIComponent('Olá, Gabriel! Quero conversar sobre '+d.name+' para minha empresa.');
     overlay.inert=false; overlay.classList.add('open');
-    document.body.style.overflow='hidden';
+    const scrollY=window.scrollY;
+    document.body.style.cssText+=`;overflow:hidden;position:fixed;top:-${scrollY}px;left:0;right:0`;
+    document.body.dataset.scrollY=scrollY;
     $('#mClose').focus({preventScroll:true});
   }
   function closeModal(){
     overlay.classList.remove('open'); overlay.inert=true;
+    const scrollY=+document.body.dataset.scrollY||0;
     document.body.style.overflow='';
+    document.body.style.position='';
+    document.body.style.top='';
+    document.body.style.left='';
+    document.body.style.right='';
+    window.scrollTo(0,scrollY);
     trigger?.focus({preventScroll:true});
   }
   grid.addEventListener('click',e=>{
