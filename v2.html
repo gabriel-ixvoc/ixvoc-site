@@ -431,7 +431,7 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
    DIAGNÓSTICO — O NÚCLEO DO POSICIONAMENTO
    ══════════════════════════════════════════ */
 .diag-split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
-.diag-split>div:last-child{align-self:stretch;display:flex;flex-direction:column}
+.diag-split>div:last-child{align-self:start}
 .diag-map{display:flex;flex-direction:column;gap:.75rem}
 .dm-row{
   display:flex;align-items:flex-start;gap:1rem;
@@ -445,7 +445,7 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
 .dm-d{font-size:.82rem;color:var(--text-dim);line-height:1.6;font-weight:300}
 
 /* Documento do plano */
-.plan-doc{padding:1.9rem 1.85rem;border-radius:var(--r-lg);position:sticky;top:6.5rem;flex:1}
+.plan-doc{padding:1.9rem 1.85rem;border-radius:var(--r-lg);position:sticky;top:6.5rem}
 .plan-doc-top{display:flex;align-items:center;gap:.7rem;
   padding-bottom:1.15rem;margin-bottom:1.35rem;border-bottom:1px solid var(--border)}
 .plan-doc-ico{width:40px;height:40px;border-radius:10px;flex-shrink:0;
@@ -1803,6 +1803,8 @@ const SVCS=[
       <p class="svc-teaser">${s.teaser}</p>
       <span class="svc-open">Ver solução →</span>
     </button>`).join('');
+
+  observeReveals(grid);
 
   /* spotlight hover */
   grid.querySelectorAll('.svc-card').forEach(card=>{
