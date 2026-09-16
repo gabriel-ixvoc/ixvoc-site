@@ -431,6 +431,7 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
    DIAGNÓSTICO — O NÚCLEO DO POSICIONAMENTO
    ══════════════════════════════════════════ */
 .diag-split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.diag-split>div:last-child{align-self:stretch;display:flex;flex-direction:column}
 .diag-map{display:flex;flex-direction:column;gap:.75rem}
 .dm-row{
   display:flex;align-items:flex-start;gap:1rem;
@@ -444,7 +445,7 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
 .dm-d{font-size:.82rem;color:var(--text-dim);line-height:1.6;font-weight:300}
 
 /* Documento do plano */
-.plan-doc{padding:1.9rem 1.85rem;border-radius:var(--r-lg);position:sticky;top:6.5rem}
+.plan-doc{padding:1.9rem 1.85rem;border-radius:var(--r-lg);position:sticky;top:6.5rem;flex:1}
 .plan-doc-top{display:flex;align-items:center;gap:.7rem;
   padding-bottom:1.15rem;margin-bottom:1.35rem;border-bottom:1px solid var(--border)}
 .plan-doc-ico{width:40px;height:40px;border-radius:10px;flex-shrink:0;
@@ -557,32 +558,56 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
 .srv-panel.active{display:grid}
 @keyframes spFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .srv-side{
-  padding:2.1rem 1.95rem;display:flex;flex-direction:column;justify-content:center;
-  background:linear-gradient(160deg,rgba(0,200,255,.08),rgba(0,200,255,.015));
-  border-right:1px solid var(--border);
+  padding:2.4rem 2.2rem;display:flex;flex-direction:column;justify-content:space-between;
+  background:linear-gradient(160deg,rgba(0,200,255,.10),rgba(0,200,255,.02));
+  border-right:1px solid var(--border);position:relative;overflow:hidden;
 }
-.light .srv-side{background:linear-gradient(160deg,rgba(0,120,165,.09),rgba(0,120,165,.02))}
-.srv-ico{font-size:2.1rem;margin-bottom:1rem}
-.srv-name{font-family:var(--fd);font-weight:800;font-size:1.32rem;
-  letter-spacing:-.018em;margin-bottom:.35rem}
-.srv-tagline{font-size:.855rem;color:var(--neon);font-weight:500;margin-bottom:1.35rem}
+.srv-side::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 55% at 80% 10%,rgba(0,200,255,.13),transparent);
+  pointer-events:none;
+}
+.light .srv-side{background:linear-gradient(160deg,rgba(0,120,165,.10),rgba(0,120,165,.03))}
+.light .srv-side::before{background:radial-gradient(ellipse 60% 55% at 80% 10%,rgba(0,120,165,.10),transparent)}
+.srv-top{flex:1;display:flex;flex-direction:column}
+.srv-ico{
+  width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;margin-bottom:1.25rem;
+  background:linear-gradient(135deg,rgba(0,200,255,.18),rgba(92,224,196,.1));
+  border:1px solid rgba(0,200,255,.25);
+  box-shadow:0 4px 16px rgba(0,200,255,.12);
+}
+.light .srv-ico{background:linear-gradient(135deg,rgba(0,120,165,.12),rgba(0,120,165,.05));border-color:rgba(0,120,165,.2);box-shadow:0 4px 16px rgba(0,120,165,.1)}
+.srv-name{font-family:var(--fd);font-weight:800;font-size:1.38rem;
+  letter-spacing:-.018em;margin-bottom:.4rem;line-height:1.2}
+.srv-tagline{font-size:.875rem;color:var(--neon);font-weight:500;margin-bottom:1.6rem;line-height:1.4}
 .light .srv-tagline{color:var(--neon-deep)}
 .srv-prob{
-  padding:.95rem 1.05rem;border-radius:var(--r-sm);
+  padding:1rem 1.1rem;border-radius:var(--r-sm);
   background:var(--red-soft);border:1px solid rgba(255,69,96,.2);
+  margin-top:auto;
 }
 .srv-prob-lbl{font-size:.64rem;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--red);margin-bottom:.35rem}
-.srv-prob-txt{font-size:.83rem;color:var(--text-dim);line-height:1.6}
-.srv-body{padding:2.1rem 1.95rem;display:flex;flex-direction:column;justify-content:center}
+  text-transform:uppercase;color:var(--red);margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem}
+.srv-prob-lbl::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red);display:inline-block;flex-shrink:0}
+.srv-prob-txt{font-size:.85rem;color:var(--text-dim);line-height:1.65}
+.srv-body{padding:2.4rem 2.2rem;display:flex;flex-direction:column;justify-content:center;gap:0}
 .srv-sol-lbl{font-size:.64rem;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--neon);margin-bottom:.5rem}
+  text-transform:uppercase;color:var(--neon);margin-bottom:.55rem;display:flex;align-items:center;gap:.4rem}
+.srv-sol-lbl::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--neon);display:inline-block;flex-shrink:0}
 .light .srv-sol-lbl{color:var(--neon-deep)}
-.srv-sol{font-size:.94rem;color:var(--text);line-height:1.72;margin-bottom:1.5rem;font-weight:400}
-.srv-delivers{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;list-style:none}
-.srv-delivers li{font-size:.82rem;color:var(--text-dim);
-  display:flex;align-items:flex-start;gap:.5rem;line-height:1.5}
-.srv-delivers li::before{content:'→';color:var(--neon);flex-shrink:0;font-weight:600}
+.light .srv-sol-lbl::before{background:var(--neon-deep)}
+.srv-sol{font-size:.95rem;color:var(--text);line-height:1.75;margin-bottom:1.75rem;font-weight:400}
+.srv-delivers-lbl{font-size:.64rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--text-muted);margin-bottom:.75rem}
+.srv-delivers{display:grid;grid-template-columns:1fr 1fr;gap:.55rem .8rem;list-style:none}
+.srv-delivers li{font-size:.83rem;color:var(--text-dim);
+  display:flex;align-items:center;gap:.5rem;line-height:1.45;
+  padding:.45rem .65rem;border-radius:8px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+}
+.light .srv-delivers li{background:rgba(0,90,125,.04);border-color:rgba(0,90,125,.1)}
+.srv-delivers li::before{content:'→';color:var(--neon);flex-shrink:0;font-weight:700;font-size:.8rem}
 .light .srv-delivers li::before{color:var(--neon-deep)}
 
 /* ══════════════════════════════════════════
@@ -784,6 +809,7 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
    SOBRE / FUNDADOR
    ══════════════════════════════════════════ */
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:3.5rem;align-items:center}
+.founder-photo img{background:linear-gradient(160deg,rgba(0,200,255,.1),rgba(0,200,255,.03));min-height:320px}
 .founder-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;
   border:1px solid var(--border);background:var(--surface)}
 .founder-photo img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
@@ -1410,7 +1436,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);
   <div class="container">
     <div class="about-grid">
       <figure class="founder-photo reveal">
-        <img src="assets/gabriel-sarzi.jpeg" alt="Gabriel Sarzi, fundador da IXVOς" width="892" height="882" loading="lazy" decoding="async">
+        <img src="assets/gabriel-sarzi.jpeg" alt="Gabriel Sarzi, fundador da IXVOς" width="892" height="882" loading="eager" decoding="sync">
         <figcaption>
           <span>Gabriel Sarzi</span>
           <span>Fundador da IXVOς</span>
@@ -1764,9 +1790,11 @@ const SVCS=[
     <div class="srv-panel glass${i===0?' active':''}" id="srv-${i}" role="tabpanel"
       aria-labelledby="srv-tab-${i}"${i===0?'':' hidden'}>
       <div class="srv-side">
-        <div class="srv-ico">${s.icon}</div>
-        <div class="srv-name">${s.name}</div>
-        <div class="srv-tagline">${s.tag}</div>
+        <div class="srv-top">
+          <div class="srv-ico">${s.icon}</div>
+          <div class="srv-name">${s.name}</div>
+          <div class="srv-tagline">${s.tag}</div>
+        </div>
         <div class="srv-prob">
           <div class="srv-prob-lbl">O problema</div>
           <div class="srv-prob-txt">${s.prob}</div>
@@ -1775,6 +1803,7 @@ const SVCS=[
       <div class="srv-body">
         <div class="srv-sol-lbl">Como resolvo</div>
         <p class="srv-sol">${s.sol}</p>
+        <div class="srv-delivers-lbl">O que é entregue</div>
         <ul class="srv-delivers">${s.delivers.map(d=>`<li>${d}</li>`).join('')}</ul>
       </div>
     </div>`).join('');
