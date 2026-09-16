@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>IXVOC — Diagnóstico, plano e execução de marketing digital</title>
+<title>IXVOC | Diagnóstico, plano e execução de marketing digital</title>
 <meta name="description" content="Não começamos pelo site. Começamos pelo diagnóstico. Mapeamos onde seu negócio perde cliente, montamos o plano e executamos: site, tráfego, SEO e medição conectados.">
 <meta name="theme-color" content="#06080F">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -784,9 +784,15 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
 .qr-sum p{font-size:.9rem;color:var(--text-dim);line-height:1.68;font-weight:300}
 .qr-sec{font-size:.66rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
   color:var(--text-muted);margin:1.8rem 0 .9rem}
+/* Painel de diagnóstico do resultado — mesma linguagem do painel do hero */
+.qr-panel{padding:1.45rem 1.5rem;border-radius:var(--r-sm);
+  background:var(--surface);border:1px solid var(--border)}
+.qr-panel .dp-rows{margin-bottom:1.3rem}
+.qr-panel .dp-foot{grid-template-columns:1fr 1fr}
 .qr-gap{padding:1.25rem 1.4rem;border-radius:var(--r-sm);
   background:var(--red-soft);border:1px solid rgba(255,69,96,.2);
   display:flex;gap:.9rem;align-items:flex-start}
+.qr-gap.ok{background:var(--neon-soft);border-color:var(--border-lit)}
 .qr-gap-ico{font-size:1.3rem;flex-shrink:0}
 .qr-gap h4{font-family:var(--fd);font-weight:700;font-size:.95rem;margin-bottom:.3rem}
 .qr-gap p{font-size:.85rem;color:var(--text-dim);line-height:1.62}
@@ -967,6 +973,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);
   .cta-btns .btn-fill,.cta-btns .btn-ghost{width:100%}
   .dp-row{grid-template-columns:6.5rem 1fr 2.4rem;gap:.5rem}
   .dp-lbl{font-size:.71rem}
+  .qr-panel{padding:1.15rem 1.1rem}
+  .qr-panel .dp-foot{grid-template-columns:1fr;gap:.6rem}
   /* Modal centralizado no mobile */
   .modal-top{text-align:center;justify-content:center;flex-direction:column;align-items:center}
   .modal-close{position:absolute;top:14px;right:16px}
@@ -1565,7 +1573,26 @@ footer{background:var(--bg2);border-top:1px solid var(--border);
             </div>
           </div>
 
-          <div class="qr-sec">Seu gargalo principal</div>
+          <div class="qr-sec">Leitura das seis frentes</div>
+          <div class="qr-panel">
+            <div class="dp-top">
+              <div class="dp-ttl">Diagnóstico do seu digital</div>
+              <div class="dp-live"><span class="dp-live-dot"></span>Seu resultado</div>
+            </div>
+            <div class="dp-rows" id="qrRows"></div>
+            <div class="dp-foot">
+              <div class="dp-stat">
+                <div class="dp-stat-val" id="qrCrit">0</div>
+                <div class="dp-stat-lbl">Gargalos críticos identificados</div>
+              </div>
+              <div class="dp-stat">
+                <div class="dp-stat-val">1º</div>
+                <div class="dp-stat-lbl" id="qrPrio"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="qr-sec" id="qrSecGap">Seu gargalo principal</div>
           <div class="qr-gap" id="qrGap"></div>
 
           <div class="qr-sec">Por onde começar</div>
@@ -1902,7 +1929,7 @@ const dp=$('.diag-panel'); if(dp)dpObs.observe(dp);
 const SVCS=[
   {icon:'⚡',name:'Sites de Alta Conversão',teaser:'Apresente seu valor e facilite o contato.',
    prob:'O visitante chega, mas não entende a oferta ou não sabe como falar com você.',
-   sol:'Construo o site a partir da mensagem definida no plano — estrutura, texto e design pensados para levar a pessoa até o contato, não para ganhar prêmio de design.',
+   sol:'Construo o site a partir da mensagem definida no plano: estrutura, texto e design pensados para levar a pessoa até o contato, não para ganhar prêmio de design.',
    delivers:['Arquitetura da página','Design personalizado','Versão mobile','Textos da oferta','Medição de contatos','Testes de velocidade']},
   {icon:'📡',name:'Tráfego Pago',teaser:'Alcance quem já procura o que você vende.',
    prob:'Você investe em anúncios sem saber quais geram oportunidades reais.',
@@ -1910,10 +1937,10 @@ const SVCS=[
    delivers:['Análise da conta','Campanhas e públicos','Criativos e roteiros','Ajustes contínuos','Medição de conversões','Relatório de custos']},
   {icon:'🔍',name:'SEO Técnico',teaser:'Seja encontrado quando procuram por você.',
    prob:'Seu negócio é difícil de achar quando o cliente pesquisa no Google.',
-   sol:'Ajusto estrutura, conteúdo e velocidade do site para facilitar a descoberta. Incluso na criação do site — posições dependem do mercado e da concorrência.',
+   sol:'Ajusto estrutura, conteúdo e velocidade do site para facilitar a descoberta. Incluso na criação do site. Posições dependem do mercado e da concorrência.',
    delivers:['Auditoria do site','Ajustes nas páginas','Plano de conteúdo','Perfil da Empresa no Google','Velocidade e indexação','Acompanhamento']},
   {icon:'🎯',name:'Branding Digital',teaser:'Mostre o valor que você já entrega.',
-   prob:'Sua identidade não representa a qualidade do seu trabalho — e você acaba comparado por preço.',
+   prob:'Sua identidade não representa a qualidade do seu trabalho, e você acaba comparado por preço.',
    sol:'Identidade consistente construída a partir do posicionamento definido no plano: como você quer ser percebido e por quem.',
    delivers:['Logotipo','Cores e tipografia','Guia da marca','Modelos para redes','Aplicações','Tom de voz']},
   {icon:'📊',name:'Analytics & CRO',teaser:'Entenda o que realmente gera contato.',
@@ -1922,7 +1949,7 @@ const SVCS=[
    delivers:['Google Analytics 4','Eventos de conversão','Painel de indicadores','Testes A/B','Análise de navegação','Recomendações']},
   {icon:'🚀',name:'Hospedagem Gerenciada',teaser:'A parte técnica deixa comigo.',
    prob:'Problemas de servidor e falta de manutenção tiram seu foco do negócio.',
-   sol:'Hospedagem em VPS própria, com backup, SSL e monitoramento. Tudo registrado no seu nome — se um dia quiser sair, sai com tudo.',
+   sol:'Hospedagem em VPS própria, com backup, SSL e monitoramento. Tudo registrado no seu nome. Se um dia quiser sair, sai com tudo.',
    delivers:['Configuração do servidor','CDN','Certificado SSL','Backups','Monitoramento','Suporte técnico']},
   {icon:'🛒',name:'E-commerce',teaser:'Facilite a compra até o pagamento.',
    prob:'O cliente encontra o produto, mas desiste antes de finalizar a compra.',
@@ -2072,15 +2099,15 @@ const CASES=[
 /* ═══ FAQ ═══ */
 const FAQS=[
   {q:'Preciso contratar tudo de uma vez?',
-   a:'Não. O diagnóstico define a ordem de prioridade — e é comum começar por uma frente só. O plano existe justamente para você saber o que resolve seu problema agora e o que pode esperar.'},
+   a:'Não. O diagnóstico define a ordem de prioridade, e é comum começar por uma frente só. O plano existe justamente para você saber o que resolve seu problema agora e o que pode esperar.'},
   {q:'Quanto tempo leva para ver resultado?',
    a:'A fundação (site + medição) costuma levar de 2 a 4 semanas, dependendo do escopo. Campanhas começam a gerar contato nos primeiros dias, mas a leitura confiável de custo por lead vem depois de algumas semanas de dados. Desconfie de quem promete prazo fechado sem conhecer seu mercado.'},
   {q:'Por que a medição vem antes do anúncio?',
-   a:'Porque sem ela você paga para aprender nada. Se as conversões não estão configuradas, a plataforma otimiza por cliques ou visualizações — e você não consegue distinguir a campanha que traz cliente da que só gasta. É a etapa mais pulada do mercado e a que mais custa caro.'},
+   a:'Porque sem ela você paga para aprender nada. Se as conversões não estão configuradas, a plataforma otimiza por cliques ou visualizações, e você não consegue distinguir a campanha que traz cliente da que só gasta. É a etapa mais pulada do mercado e a que mais custa caro.'},
   {q:'O que acontece se eu quiser encerrar?',
-   a:'Você leva tudo. Domínio, contas de anúncio, analytics, código e acessos são registrados no seu nome desde o início — não no meu. Não há fidelidade contratual nem multa de saída.'},
+   a:'Você leva tudo. Domínio, contas de anúncio, analytics, código e acessos são registrados no seu nome desde o início, não no meu. Não há fidelidade contratual nem multa de saída.'},
   {q:'Vocês atendem meu segmento?',
-   a:'O método funciona para negócios que dependem de gerar contato — serviços, comércio local, B2B de ticket médio. Se no diagnóstico ficar claro que seu caso pede alguém mais especializado, eu digo isso em vez de vender um projeto que não vai funcionar.'},
+   a:'O método funciona para negócios que dependem de gerar contato: serviços, comércio local, B2B de ticket médio. Se no diagnóstico ficar claro que seu caso pede alguém mais especializado, eu digo isso em vez de vender um projeto que não vai funcionar.'},
   {q:'Trabalho com quem já tem site e campanha rodando?',
    a:'Sim, e costuma ser o caso mais comum. O diagnóstico avalia o que já existe: muita coisa dá para aproveitar e ajustar, o que sai mais barato e mais rápido do que recomeçar do zero.'},
   {q:'Quem faz o trabalho, de fato?',
@@ -2146,25 +2173,25 @@ const QUIZ=[
    ],key:'atendimento'}
 ];
 const GAPS={
-  medicao:{ico:'📊',t:'Falta de medição',
-    d:'Você está investindo sem saber o que retorna. Enquanto a origem dos contatos não for rastreada, toda decisão de verba é palpite — e o dinheiro tende a ir para o canal que parece bom, não para o que vende.'},
-  oferta:{ico:'🗣️',t:'Oferta pouco clara',
+  medicao:{ico:'📊',t:'Falta de medição',lbl:'Medição',short:'Prioridade: medir antes de investir',
+    d:'Você está investindo sem saber o que retorna. Enquanto a origem dos contatos não for rastreada, toda decisão de verba é palpite, e o dinheiro tende a ir para o canal que parece bom, não para o que vende.'},
+  oferta:{ico:'🗣️',t:'Oferta pouco clara',lbl:'Oferta',short:'Prioridade: deixar a oferta clara',
     d:'Quem chega não entende rápido o que você vende nem por que escolher você. Isso derruba a conversão de todos os outros canais: mesmo o melhor anúncio leva a pessoa para uma página que não convence.'},
-  canais:{ico:'🧭',t:'Dependência de poucos canais',
+  canais:{ico:'🧭',t:'Dependência de poucos canais',lbl:'Canais',short:'Prioridade: diversificar a entrada',
     d:'Seu faturamento está exposto. Depender de indicação ou de um canal só significa que uma variação fora do seu controle derruba o mês inteiro.'},
-  trafego:{ico:'📡',t:'Aquisição sem controle',
+  trafego:{ico:'📡',t:'Aquisição sem controle',lbl:'Anúncios',short:'Prioridade: rastrear antes de escalar',
     d:'Investimento em anúncio sem leitura de retorno. Ou você não anuncia e deixa demanda na mesa, ou anuncia sem saber o custo real de cada cliente conquistado.'},
-  busca:{ico:'🔍',t:'Invisível na busca',
+  busca:{ico:'🔍',t:'Invisível na busca',lbl:'Busca',short:'Prioridade: aparecer na busca',
     d:'Quando alguém procura o serviço que você presta, encontra o concorrente. É demanda pronta, com intenção de compra, indo para outro lugar todos os dias.'},
-  atendimento:{ico:'⚙️',t:'Gargalo no atendimento',
+  atendimento:{ico:'⚙️',t:'Gargalo no atendimento',lbl:'Atendimento',short:'Prioridade: destravar o atendimento',
     d:'Aumentar contatos agora só aumenta o que se perde. Antes de escalar a entrada, é preciso garantir que nenhum contato fique sem resposta.'}
 };
 const RECS={
   medicao:[['Medição completa','GA4, Tag Manager e conversões instalados e testados antes de qualquer verba.'],['Relatório de origem','Painel mostrando de onde vem cada contato e quanto custa.']],
-  oferta:[['Mensagem e posicionamento','Definir o que dizer, para quem e por quê — antes do design.'],['Site de conversão','Página construída para levar ao contato, não só para ser bonita.']],
+  oferta:[['Mensagem e posicionamento','Definir o que dizer, para quem e por quê, antes do design.'],['Site de conversão','Página construída para levar ao contato, não só para ser bonita.']],
   canais:[['Plano de canais','Mapear quais canais fazem sentido no seu mercado e em que ordem ativar.'],['Base própria','Site e presença na busca que funcionam sem depender de indicação.']],
   trafego:[['Tráfego com rastreio','Google e Meta Ads ligados às conversões, com custo por lead visível.'],['Criativos e públicos','Anúncio falando com quem realmente compra de você.']],
-  busca:[['SEO técnico','Estrutura, conteúdo e velocidade ajustados para o Google encontrar você.'],['Perfil da Empresa','Google Meu Negócio otimizado — é o que aparece na busca local.']],
+  busca:[['SEO técnico','Estrutura, conteúdo e velocidade ajustados para o Google encontrar você.'],['Perfil da Empresa','Google Meu Negócio otimizado, é o que aparece na busca local.']],
   atendimento:[['Automação de contato','Fluxos que garantem resposta rápida e nenhum contato esquecido.'],['Organização no CRM','Cada contato registrado, com lembrete de retorno.']]
 };
 (function quiz(){
@@ -2205,8 +2232,8 @@ const RECS={
     });
 
     let title,sub;
-    if(pct>=70){title='Boa base construída';sub='Seu digital tem estrutura. O ganho agora vem de refinar o que já existe e fechar os pontos que ainda escapam — normalmente é onde está o maior retorno com menor esforço.';}
-    else if(pct>=40){title='Fundação incompleta';sub='Tem coisa funcionando, mas peças importantes faltam. Esse é o cenário mais comum — e também o que mais desperdiça investimento, porque cada canal trabalha sozinho.';}
+    if(pct>=70){title='Boa base construída';sub='Seu digital tem estrutura. O ganho agora vem de refinar o que já existe e fechar os pontos que ainda escapam. Normalmente é onde está o maior retorno com menor esforço.';}
+    else if(pct>=40){title='Fundação incompleta';sub='Tem coisa funcionando, mas peças importantes faltam. Esse é o cenário mais comum, e também o que mais desperdiça investimento, porque cada canal trabalha sozinho.';}
     else{title='Começando do zero';sub='A boa notícia: não há nada para desfazer. Dá para construir na ordem certa desde o início e evitar o desperdício que a maioria já acumulou.';}
 
     const arc=$('#qrArc'),C=2*Math.PI*48;
@@ -2225,12 +2252,49 @@ const RECS={
     $('#qrTitle').textContent=title;
     $('#qrSub').textContent=sub;
 
-    const g=GAPS[worstKey];
-    $('#qrGap').innerHTML=`<div class="qr-gap-ico">${g.ico}</div>
-      <div><h4>${g.t}</h4><p>${g.d}</p></div>`;
-    $('#qrRecs').innerHTML=RECS[worstKey].map(r=>
-      `<div class="qr-rec"><div class="qr-rec-t">${r[0]}</div><div class="qr-rec-d">${r[1]}</div></div>`
-    ).join('');
+    // Painel de barras — uma frente por linha, mesma leitura do painel do hero
+    const PCT={0:18,1:46,3:89};
+    const rows=QUIZ.map(q=>{
+      const s=answers[q.key];
+      return {lbl:GAPS[q.key].lbl,pct:PCT[s],warn:s<=1};
+    });
+    $('#qrRows').innerHTML=rows.map(r=>
+      `<div class="dp-row">
+        <span class="dp-lbl">${r.lbl}</span>
+        <div class="dp-track"><div class="dp-fill${r.warn?' warn':''}" data-w="${r.pct}"></div></div>
+        <span class="dp-val">${r.pct}%</span>
+      </div>`).join('');
+    $$('.dp-fill',$('#qrRows')).forEach((f,i)=>{
+      setTimeout(()=>{f.style.width=f.dataset.w+'%';},reduceMotion?0:220+i*130);
+    });
+
+    const crit=rows.filter(r=>r.warn).length;
+    $('#qrCrit').textContent=crit;
+
+    const gapBox=$('#qrGap');
+    if(crit===0){
+      // Nenhuma frente em risco: não existe gargalo a apontar
+      $('#qrPrio').textContent='Prioridade: refinar o que já funciona';
+      $('#qrSecGap').textContent='Onde está sua vantagem';
+      gapBox.classList.add('ok');
+      gapBox.innerHTML=`<div class="qr-gap-ico">✅</div>
+        <div><h4>Nenhuma frente crítica</h4>
+        <p>As seis frentes estão cobertas. Daqui em diante o ganho não vem de consertar buraco, vem de aprofundar: testar oferta, abrir novos canais e disputar posições que hoje você ainda não ocupa.</p></div>`;
+      $('#qrRecs').innerHTML=[
+        ['Escala com leitura','Aumentar verba onde o retorno já está provado, sem perder o controle de custo por cliente.'],
+        ['Disputa de posição','Avançar sobre termos e públicos que hoje são do concorrente.']
+      ].map(r=>`<div class="qr-rec"><div class="qr-rec-t">${r[0]}</div><div class="qr-rec-d">${r[1]}</div></div>`).join('');
+    }else{
+      $('#qrPrio').textContent=GAPS[worstKey].short;
+      $('#qrSecGap').textContent='Seu gargalo principal';
+      gapBox.classList.remove('ok');
+      const g=GAPS[worstKey];
+      gapBox.innerHTML=`<div class="qr-gap-ico">${g.ico}</div>
+        <div><h4>${g.t}</h4><p>${g.d}</p></div>`;
+      $('#qrRecs').innerHTML=RECS[worstKey].map(r=>
+        `<div class="qr-rec"><div class="qr-rec-t">${r[0]}</div><div class="qr-rec-d">${r[1]}</div></div>`
+      ).join('');
+    }
 
     resultBox.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'center'});
   }
@@ -2253,6 +2317,7 @@ const RECS={
     resultBox.classList.remove('on');
     stepsBox.style.display='';
     $('#qrArc').style.strokeDashoffset=301.6;
+    $('#qrRows').innerHTML='';
     show(0);
     $('#quiz').scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'});
   });

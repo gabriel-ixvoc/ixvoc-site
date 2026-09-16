@@ -116,6 +116,24 @@ Mobile: `.about-txt { display:block }` → foto full-width em fluxo, após h2
 - Grain: `body::after` SVG feTurbulence, `opacity:.055`, `mix-blend-mode:overlay`
 - Dot grid: `body` radial-gradient `rgba(255,255,255,.07) 1px`, `28px 28px`
 
+## Quiz / Diagnóstico interativo (#quiz)
+- 6 perguntas, keys: `medicao`, `oferta`, `canais`, `trafego`, `busca`, `atendimento`
+- Cada opção vale `s` = 3 (bom) / 1 (parcial) / 0 (ruim)
+- `GAPS[key]` tem: `ico`, `t` (título), `lbl` (rótulo curto da barra), `short` (linha de prioridade), `d` (descrição)
+- `RECS[key]` = 2 recomendações [título, descrição]
+- **Resultado** mostra painel `.qr-panel` que replica o painel do hero (`.diag-panel`),
+  reusando as mesmas classes `dp-top/dp-rows/dp-row/dp-lbl/dp-track/dp-fill/dp-val/dp-foot/dp-stat`
+- Mapa score→porcentagem da barra: `{0:18, 1:46, 3:89}`; `.warn` (vermelho) quando score <= 1
+- Rodapé do painel: nº de gargalos críticos (`#qrCrit`) + prioridade (`#qrPrio`)
+- Se `crit === 0`: troca para leitura positiva ("Nenhuma frente crítica"), `.qr-gap.ok` (ciano),
+  seção renomeada via `#qrSecGap` e recomendações de escala em vez de correção
+- Barras animam no `finish()` com stagger de 130ms; observer do hero usa `$('.diag-panel')` (singular), não conflita
+- `#quizRestart` limpa `#qrRows` e reseta o arco do gauge
+
+## Travessões
+- Nenhum travessão em texto visível. Os 16 restantes no arquivo são só comentários de CSS/JS
+- Ao adicionar texto novo, usar `:`, `,` ou ponto final no lugar de `—`
+
 ## Regras do Gabriel
 - Resumo final curto após cada tarefa
 - Sempre salvar este memory.md atualizado
