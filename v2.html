@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>IXVOς — Diagnóstico, plano e execução de marketing digital</title>
+<title>IXVOC — Diagnóstico, plano e execução de marketing digital</title>
 <meta name="description" content="Não começamos pelo site. Começamos pelo diagnóstico. Mapeamos onde seu negócio perde cliente, montamos o plano e executamos — site, tráfego, SEO e medição conectados.">
 <meta name="theme-color" content="#06080F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,7 +140,7 @@ nav.scrolled{
 /* ς (sigma final) tem corpo menor e um pingo descendente na maioria das
    fontes — sem esse ajuste ele fica pequeno e puxado pra baixo comparado
    ao caixa-alta "IXVO". Aumenta e sobe pra equilibrar visualmente. */
-.nm .sigma{font-size:1.15em;vertical-align:-.04em;letter-spacing:0;font-weight:800;color:var(--neon)}
+.nm .sigma{font-size:1.15em;vertical-align:baseline;letter-spacing:0;font-weight:800;color:var(--neon)}
 
 .nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;flex:1;justify-content:center}
 .nav-links a{
@@ -430,8 +430,7 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
 /* ══════════════════════════════════════════
    DIAGNÓSTICO — O NÚCLEO DO POSICIONAMENTO
    ══════════════════════════════════════════ */
-.diag-split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
-.diag-split>div:last-child{align-self:start}
+.diag-split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem}
 .diag-map{display:flex;flex-direction:column;gap:.75rem}
 .dm-row{
   display:flex;align-items:flex-start;gap:1rem;
@@ -1661,6 +1660,8 @@ function sweepReveals(){
 observeReveals();
 onScroll();
 window.addEventListener('resize',sweepReveals,{passive:true});
+/* segundo passe: garante que elementos adicionados por JS (cases, faq…) sejam observados */
+setTimeout(()=>{observeReveals();sweepReveals();},200);
 
 /* ═══ CONTADORES ═══ */
 const counterObs=new IntersectionObserver(es=>es.forEach(e=>{
