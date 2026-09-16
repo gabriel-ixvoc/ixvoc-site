@@ -142,6 +142,21 @@ Mobile: `.about-txt { display:block }` → foto full-width em fluxo, após h2
 - Nenhum travessão em texto visível. Os 16 restantes no arquivo são só comentários de CSS/JS
 - Ao adicionar texto novo, usar `:`, `,` ou ponto final no lugar de `—`
 
+## Posicionamento e copy (definido set/2026)
+Foco: **marketing 360 e resultado**, NÃO "sites". Site é uma peça do ecossistema, não o produto.
+- Promessa central: marketing bem estruturado, tudo interligado, trazendo cliente que QUER o serviço
+- Vilões da copy: agência genérica que vende pacote pronto; gestor de tráfego que entrega
+  volume de lead desqualificado e some. Cutucar isso, sem citar nomes
+- Vender: previsibilidade, faturamento, resultado. Lead qualificado > volume de lead
+- **Não existe pacote fechado**: o processo (Diagnóstico → Estratégia → Execução) é fixo,
+  o plano é personalizado por negócio. Método = "O processo é sempre o mesmo. O plano, nunca."
+- Gargalo pode estar em qualquer frente: aquisição, posicionamento, anúncio sem estratégia,
+  só orgânico, sem planejamento, sem rastreamento, atendimento
+- Vocabulário: "rastreamento" (não "medição"), "estratégia" (não "plano de marketing"),
+  "cliente que fecha" (não "contato"), "frentes" (não "serviços")
+- H1: "Seu negócio não precisa de mais leads. Precisa de clientes que fecham."
+- SVCS reordenado: Tráfego Pago e Analytics primeiro, site em 4º (marketing antes de site)
+
 ## Regras do Gabriel
 - Resumo final curto após cada tarefa
 - Sempre salvar este memory.md atualizado
