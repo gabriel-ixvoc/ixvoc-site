@@ -554,14 +554,15 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
 .svc-card:hover{transform:translateY(-6px);border-color:rgba(0,200,255,.35)}
 .light .svc-card:hover{border-color:rgba(0,120,165,.4)}
 .svc-card:hover::before{opacity:1}
-.svc-card:hover .svc-open{opacity:1;transform:none}
+.svc-card:hover .svc-open{opacity:1}
+.svc-card{display:flex;flex-direction:column}
 .svc-icon{font-size:1.5rem;margin-bottom:16px;display:block}
 .svc-name{font-family:var(--fd);font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:7px;letter-spacing:.01em;line-height:1.25}
 .light .svc-name{color:#0a1628}
 .svc-teaser{font-size:.8rem;color:var(--text-dim);line-height:1.62;margin-bottom:16px}
 .svc-open{display:inline-flex;align-items:center;gap:6px;font-size:.68rem;font-weight:500;
   letter-spacing:.11em;text-transform:uppercase;color:var(--neon);
-  opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s}
+  opacity:.7;transform:none;transition:opacity .3s,transform .3s;margin-top:auto;padding-top:14px}
 .light .svc-open{color:var(--neon-deep)}
 /* ── modal ── */
 .modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(3,5,11,.82);
@@ -802,7 +803,7 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
 .founder-photo img{background:linear-gradient(160deg,rgba(0,200,255,.1),rgba(0,200,255,.03));min-height:320px}
 .founder-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;
   border:1px solid var(--border);background:var(--surface)}
-.founder-photo img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.founder-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
 .founder-photo figcaption{
   position:absolute;left:0;right:0;bottom:0;padding:1.6rem 1.35rem .95rem;
   display:flex;flex-direction:column;gap:.1rem;
@@ -951,6 +952,55 @@ footer{background:var(--bg2);border-top:1px solid var(--border);
   }
   .pm-device-wrap.is-desktop{width:calc(100vw - 28px)}
   .pm-device-wrap.is-desktop .pm-screen{height:min(calc(92vh - 110px),calc((100vw - 28px) * 0.625))}
+
+  /* ── Alinhamento geral mobile ── */
+  #hero{text-align:center}
+  .hero-badge{margin-left:auto;margin-right:auto}
+  .hero-trust{justify-content:center}
+  .hero-sub{margin-left:auto;margin-right:auto;max-width:44ch}
+  .hero-btns{align-items:center}
+  .hero-metrics{text-align:center;justify-items:center}
+  .hm{text-align:center;border-left:none!important;padding-left:0!important;padding-right:0!important}
+
+  /* Problema real */
+  .prob-top{text-align:center}
+  .prob-top .eyebrow{margin-left:auto;margin-right:auto}
+  .prob-top .sec-lead{text-align:center;margin-left:auto;margin-right:auto}
+  .prob-quote{text-align:center}
+
+  /* O que vem antes (diagnóstico) */
+  #diagnostico .container>div:first-child{text-align:center}
+  #diagnostico .container>div:first-child .eyebrow{margin-left:auto;margin-right:auto}
+  #diagnostico .container>div:first-child .sec-lead{margin-left:auto;margin-right:auto}
+  .diag-split>div:first-child{text-align:center}
+
+  /* A execução */
+  #servicos .container>div:first-child{text-align:center}
+  #servicos .container>div:first-child .eyebrow{margin-left:auto;margin-right:auto}
+  #servicos .container>div:first-child .sec-lead{margin-left:auto;margin-right:auto}
+
+  /* Sobre / Fundador */
+  .about-grid{text-align:center}
+  .about-txt{text-align:center}
+  .about-txt p{max-width:100%;margin-left:auto;margin-right:auto}
+  .founder-photo{max-width:280px;margin:0 auto}
+  .founder-photo img{aspect-ratio:1!important}
+  .founder-skills{justify-content:center}
+  .founder-creds>div{grid-template-columns:1fr;gap:.3rem}
+  .founder-principle{text-align:center}
+  .about-txt .btn-fill,.about-txt .btn-ghost{width:100%;justify-content:center}
+
+  /* FAQ */
+  .faq-head{text-align:center}
+  .faq-head .eyebrow{margin-left:auto;margin-right:auto}
+  .faq-head .sec-h,.faq-head .sec-lead{text-align:center;margin-left:auto;margin-right:auto}
+  .faq-head .btn-ghost{width:100%;justify-content:center}
+
+  /* Footer */
+  footer{text-align:center}
+  .foot-brand p{max-width:100%;margin-left:auto;margin-right:auto}
+  .foot-bot{flex-direction:column;text-align:center;gap:.5rem}
+  .foot-col ul{align-items:center}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;
