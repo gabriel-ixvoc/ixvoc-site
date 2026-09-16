@@ -334,17 +334,6 @@ section{padding:clamp(72px,9vw,118px) var(--pad);position:relative}
 .hero-trust span{display:inline-flex;align-items:center;gap:.4rem}
 .hero-trust span::before{content:'✓';color:var(--neon);font-weight:700}
 
-.hero-metrics{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  margin-top:2.6rem;padding-top:1.9rem;border-top:1px solid var(--border);
-}
-.hm{text-align:left;padding:.4rem .9rem .4rem 0}
-.hm:not(:first-child){border-left:1px solid var(--border);padding-left:1.1rem}
-.hm-val{font-family:var(--fd);font-weight:800;
-  font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1;letter-spacing:-.028em}
-.hm-suf{font-size:.85rem;color:var(--neon);font-weight:600}
-.hm-lbl{font-size:.66rem;color:var(--text-muted);margin-top:.45rem;
-  text-transform:uppercase;letter-spacing:.08em;line-height:1.42}
 
 /* Visual do hero — painel de diagnóstico em vidro */
 .hero-visual{position:relative}
@@ -949,10 +938,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);
   .nav-toggle{display:flex}
   nav{padding:.7rem .9rem .7rem 1.3rem}
   nav.scrolled{padding:.6rem .9rem .6rem 1.3rem}
-  .hero-metrics{grid-template-columns:1fr 1fr;gap:0;row-gap:1.2rem}
-  .hm:nth-child(3){border-left:none;padding-left:0}
-  .hm:nth-child(odd){border-left:none;padding-left:0}
-  .hm:nth-child(even){border-left:1px solid var(--border);padding-left:1.1rem}
 }
 @media(max-width:680px){
   #hero{padding-top:7.5rem;min-height:auto}
@@ -998,8 +983,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);
   .hero-trust{justify-content:center}
   .hero-sub{margin-left:auto;margin-right:auto;max-width:44ch}
   .hero-btns{align-items:center}
-  .hero-metrics{text-align:center;justify-items:center}
-  .hm{text-align:center;border-left:none!important;padding-left:0!important;padding-right:0!important}
 
   /* Problema real */
   .prob-top{text-align:center}
@@ -1142,24 +1125,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);
         <span>Tudo no seu nome</span>
         <span>Escopo por escrito</span>
       </div>
-      <div class="hero-metrics reveal">
-        <div class="hm">
-          <div class="hm-val"><span class="counter" data-to="5">0</span></div>
-          <div class="hm-lbl">Fases do método</div>
-        </div>
-        <div class="hm">
-          <div class="hm-val"><span class="counter" data-to="8">0</span></div>
-          <div class="hm-lbl">Frentes integradas</div>
-        </div>
-        <div class="hm">
-          <div class="hm-val"><span class="counter" data-to="100">0</span><span class="hm-suf">%</span></div>
-          <div class="hm-lbl">Acessos no seu nome</div>
-        </div>
-        <div class="hm">
-          <div class="hm-val"><span class="counter" data-to="24">0</span><span class="hm-suf">h</span></div>
-          <div class="hm-lbl">Resposta útil</div>
-        </div>
-      </div>
     </div>
 
     <div class="hero-visual">
@@ -1221,22 +1186,28 @@ footer{background:var(--bg2);border-top:1px solid var(--border);
 <!-- ═══ MARQUEE ═══ -->
 <div class="cred-strip" aria-hidden="true">
   <div class="marquee-track">
-    <span class="ci"><span class="ci-dot dot-c"></span>Google Ads e Meta Ads</span>
-    <span class="ci"><span class="ci-dot dot-t"></span>SEO técnico incluso no site</span>
-    <span class="ci"><span class="ci-dot dot-g"></span>Medição antes do primeiro anúncio</span>
-    <span class="ci"><span class="ci-dot dot-c"></span>Hospedagem própria em VPS</span>
-    <span class="ci"><span class="ci-dot dot-y"></span>Escopo e prazo por escrito</span>
-    <span class="ci"><span class="ci-dot dot-t"></span>Domínio e contas no seu nome</span>
-    <span class="ci"><span class="ci-dot dot-g"></span>Sem contrato de fidelidade</span>
-    <span class="ci"><span class="ci-dot dot-c"></span>MBA em Marketing, Branding e Growth</span>
-    <span class="ci"><span class="ci-dot dot-c"></span>Google Ads e Meta Ads</span>
-    <span class="ci"><span class="ci-dot dot-t"></span>SEO técnico incluso no site</span>
-    <span class="ci"><span class="ci-dot dot-g"></span>Medição antes do primeiro anúncio</span>
-    <span class="ci"><span class="ci-dot dot-c"></span>Hospedagem própria em VPS</span>
-    <span class="ci"><span class="ci-dot dot-y"></span>Escopo e prazo por escrito</span>
-    <span class="ci"><span class="ci-dot dot-t"></span>Domínio e contas no seu nome</span>
-    <span class="ci"><span class="ci-dot dot-g"></span>Sem contrato de fidelidade</span>
-    <span class="ci"><span class="ci-dot dot-c"></span>MBA em Marketing, Branding e Growth</span>
+    <span class="ci"><span class="ci-dot dot-c"></span>Tráfego pago</span>
+    <span class="ci"><span class="ci-dot dot-t"></span>Sites e landing pages</span>
+    <span class="ci"><span class="ci-dot dot-g"></span>Meta Ads</span>
+    <span class="ci"><span class="ci-dot dot-y"></span>Google Ads</span>
+    <span class="ci"><span class="ci-dot dot-c"></span>LinkedIn Ads</span>
+    <span class="ci"><span class="ci-dot dot-t"></span>E-commerce</span>
+    <span class="ci"><span class="ci-dot dot-g"></span>Hospedagem</span>
+    <span class="ci"><span class="ci-dot dot-y"></span>Analytics e CRO</span>
+    <span class="ci"><span class="ci-dot dot-c"></span>Automações</span>
+    <span class="ci"><span class="ci-dot dot-t"></span>CRM</span>
+    <span class="ci"><span class="ci-dot dot-g"></span>Estratégia</span>
+    <span class="ci"><span class="ci-dot dot-c"></span>Tráfego pago</span>
+    <span class="ci"><span class="ci-dot dot-t"></span>Sites e landing pages</span>
+    <span class="ci"><span class="ci-dot dot-g"></span>Meta Ads</span>
+    <span class="ci"><span class="ci-dot dot-y"></span>Google Ads</span>
+    <span class="ci"><span class="ci-dot dot-c"></span>LinkedIn Ads</span>
+    <span class="ci"><span class="ci-dot dot-t"></span>E-commerce</span>
+    <span class="ci"><span class="ci-dot dot-g"></span>Hospedagem</span>
+    <span class="ci"><span class="ci-dot dot-y"></span>Analytics e CRO</span>
+    <span class="ci"><span class="ci-dot dot-c"></span>Automações</span>
+    <span class="ci"><span class="ci-dot dot-t"></span>CRM</span>
+    <span class="ci"><span class="ci-dot dot-g"></span>Estratégia</span>
   </div>
 </div>
 
@@ -1829,21 +1800,6 @@ onScroll();
 window.addEventListener('resize',sweepReveals,{passive:true});
 /* segundo passe: garante que elementos adicionados por JS (cases, faq…) sejam observados */
 setTimeout(()=>{observeReveals();sweepReveals();},200);
-
-/* ═══ CONTADORES ═══ */
-const counterObs=new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting)return;
-  counterObs.unobserve(e.target);
-  const el=e.target,to=parseFloat(el.dataset.to)||0;
-  if(reduceMotion){el.textContent=to;return;}
-  const dur=1400,t0=performance.now();
-  (function tick(now){
-    const p=Math.min((now-t0)/dur,1);
-    el.textContent=Math.round(to*(1-Math.pow(1-p,3)));
-    if(p<1)requestAnimationFrame(tick);
-  })(t0);
-}),{threshold:.5});
-$$('.counter').forEach(el=>counterObs.observe(el));
 
 /* ═══ BARRAS DO PAINEL DE DIAGNÓSTICO ═══ */
 const dpObs=new IntersectionObserver(es=>es.forEach(e=>{

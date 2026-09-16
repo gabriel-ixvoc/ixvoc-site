@@ -25,7 +25,8 @@ cp v2.html index.html && git add v2.html index.html
 - Arquivo original: `assets/gabriel-sarzi.jpeg` (74924 bytes)
 
 ## Estrutura HTML relevante
-- `#hero` — hero com `.hero-badge`, `.hero-h1`, `.hero-sub`, `.hero-btns`, `.hero-metrics`
+- `#hero` — hero com `.hero-badge`, `.hero-h1`, `.hero-sub`, `.hero-btns`, `.hero-trust`
+  (os 4 cards `.hero-metrics`/`.hm` foram removidos, junto do CSS e do observer `.counter`)
 - `#problema` — `.prob-top` (2 cols: eyebrow+h2+sec-lead | quote)
 - `#diagnostico` — `.diag-split` (2 cols: mapa | plan-doc sticky)
 - `#metodo` — método com trilho `.method-step`
@@ -107,6 +108,13 @@ Mobile: `.about-txt { display:block }` → foto full-width em fluxo, após h2
 - WhatsApp: `https://wa.me/5511993223865`
 - Diagnóstico: `#cta`
 - Some quando nav menu está aberto (JS MutationObserver em `nav.classList`)
+
+## Letreiro (.cred-strip / .marquee-track)
+- 11 frentes, lista duplicada para o loop ficar contínuo (22 spans `.ci`)
+- Tráfego pago, Sites e landing pages, Meta Ads, Google Ads, LinkedIn Ads,
+  E-commerce, Hospedagem, Analytics e CRO, Automações, CRM, Estratégia
+- Cor do ponto cicla `dot-c` → `dot-t` → `dot-g` → `dot-y`
+- Ao mexer na lista, duplicar sempre os dois blocos iguais
 
 ## Cards de serviço (execução)
 - `.svc-card` tem `display:flex; flex-direction:column`
