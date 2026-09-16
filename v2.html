@@ -94,6 +94,21 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none;color:in
 :focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:4px}
 ::selection{background:var(--neon);color:#04060C}
 
+/* ══════════════════════════════════════════
+   TEXTURA — grain + dot grid
+   ══════════════════════════════════════════ */
+/* Grain fixo sobre a página toda */
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23f)'/%3E%3C/svg%3E");
+  opacity:.028;mix-blend-mode:overlay;
+}
+/* Dot grid nos fundos escuros */
+body{background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:28px 28px}
+.light{background-image:radial-gradient(rgba(0,90,125,.06) 1px,transparent 1px);background-size:28px 28px}
+/* Remove dot grid do hero (tem canvas próprio) */
+#hero{background-image:none}
+
 /* ── Barra de progresso ── */
 #prog{position:fixed;top:0;left:0;height:2px;width:0;z-index:9999;
   background:linear-gradient(90deg,var(--neon),var(--teal));
@@ -1447,7 +1462,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);
 <section id="sobre" class="light">
   <div class="container">
     <div class="about-grid">
-      <figure class="founder-photo reveal">
+      <figure class="founder-photo">
         <img src="assets/gabriel-sarzi.jpeg" alt="Gabriel Sarzi, fundador da IXVOς" width="892" height="882" loading="eager" decoding="sync">
         <figcaption>
           <span>Gabriel Sarzi</span>
