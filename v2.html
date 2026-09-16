@@ -1004,10 +1004,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);
   /* Sobre / Fundador */
   .about-txt{display:block;text-align:center}
   .about-txt p{max-width:100%;margin-left:auto;margin-right:auto}
-  .founder-photo{
+  .about-txt>.founder-photo{
+    grid-column:unset!important;grid-row:unset!important;
     position:relative!important;
     width:100%;max-width:100%;
-    margin:1.25rem 0 1.5rem;
+    margin:.75rem 0 1rem;
   }
   .founder-photo img{aspect-ratio:1!important}
   .founder-skills{justify-content:center}
